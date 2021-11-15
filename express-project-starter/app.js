@@ -12,7 +12,7 @@ const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');
 
 const app = express();
-
+//added comment
 // view engine setup
 app.set('view engine', 'pug');
 
