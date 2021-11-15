@@ -16,7 +16,7 @@ router.get('/notLoggedIn', function(req, res, next) {
 
 // GET inventory page
 router.get('/inventory', function(req, res, next) {
-  res.render('inventory', { title: inventory });
+  res.render('inventory', { title: 'inventory' });
 })
 
 // GET login page
