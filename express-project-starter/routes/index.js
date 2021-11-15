@@ -1,10 +1,23 @@
 const express = require('express');
 const router = express.Router();
 
-// GET home page
+// GET logged in front page
 router.get('/', function(req, res, next) {
+
+  // if logged in
   res.render('index', { title: 'Pacific Potion Home' });
+
 });
+
+// GET not logged in front page
+router.get('/notLoggedIn', function(req, res, next) {
+  res.render('loggedOutHome', { title: 'Home'});
+})
+
+// GET inventory page
+router.get('/inventory', function(req, res, next) {
+  res.render('inventory', { title: inventory });
+})
 
 // GET login page
 router.get('/login', function(req, res, next) {
@@ -16,20 +29,9 @@ router.get('/register', function(req, res, next) {
   res.render('register', { title: 'register' });
 })
 
-// GET inventory page
-router.get('/inventory', function(req, res, next) {
-  res.render('inventory', { title: inventory });
-})
-
 // GET search page
 router.get('/search', function(req, res, next) {
   res.render('search', { title: 'search' });
-})
-
-// GET potion page by potion id
-router.get('/potion/:potionId(//d+)', function(req, res, next) {
-  console.log(req.params);
-  res.render('potion', { title: `potion ${req.params}`})
 })
 
 module.exports = router;
