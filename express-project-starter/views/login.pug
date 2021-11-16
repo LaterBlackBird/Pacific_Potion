@@ -2,21 +2,19 @@ doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        //- add page specific styles by appending to the head
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width initial-scale=1.0")
         link(rel='stylesheet' href='/stylesheets/login.css')
-        //- add page specific js
-        script(src='../routes/login.js' type='module' defer)
 
     body 
         h1= title
-        form(action='/login', method='post')
+        form(action='/login' method='post')
+            input(type='hidden' name='_csrf' value=csrfToken)
             label(for='username') Username
-            input(name='username', type='text', id='username') 
+            input(name='username' type='text' id='username' required) 
             label(for='password') Password 
-            input(name='password', type='password', id='password')
-            input(type='submit', value='Create User')
+            input(name='password' type='password' id='password' required)
+            input(type='submit' value='Login')
         p= 'not a member?'
         a(href='/sign_up') Sign Up
-        a(href='/demo_user', id='one') Demo User
+        a(href='/demo_user' id='one') Demo User
