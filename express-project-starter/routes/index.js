@@ -18,14 +18,15 @@ router.get('/inventory', function (req, res, next) {
 })
 
 // GET login page
-router.get('/login', function (req, res, next) {
-  res.render('login', { title: 'Log In' });
-})
+// router.get('/login', function (req, res, next) {
+//   res.render('login', { title: 'Log In' });
+// })
 
 // GET register page
-router.get('/signup', function (req, res, next) {
-  res.render('signup-form', { title: 'Sign Up'});
-})
+// router.get('/signup', function (req, res, next) {
+//   res.render('signup-form', { title: 'Sign Up'});
+// })
+
 // GET search page
 router.get('/search', function (req, res, next) {
   res.render('search', { title: 'search' });
@@ -147,7 +148,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
 
 router.post('/logout', (req, res) => {
   logoutUser(req, res);
-  res.redirect('/login');
+  res.redirect('/');
 });
 
 module.exports = router;
