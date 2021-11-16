@@ -7,17 +7,9 @@ const { loginUser, logoutUser } = require('../auth')
 const { userValidators, loginValidators } = require('./authValidations')
 const router = express.Router();
 
-// GET logged in front page
-router.get('/', function (req, res, next) {
-
-  // if logged in
-  res.render('index', { title: 'Pacific Potion Home' });
-
-});
-
 // GET not logged in front page
-router.get('/notLoggedIn', function (req, res, next) {
-  res.render('loggedOutHome', { title: 'Home' });
+router.get('/', function (req, res, next) {
+  res.render('home');
 })
 
 // GET inventory page
