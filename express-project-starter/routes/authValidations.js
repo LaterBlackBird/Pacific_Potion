@@ -25,7 +25,7 @@ const userValidators = [
     check('password')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Password'),
-    check('confirmPassword')
+    check('confirm-pw')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Confirm Password')
         .custom((value, { req }) => {

@@ -30,8 +30,10 @@ router.get('/search', function(req, res, next) {
   res.render('search', { title: 'search' });
 })
 
+/********************** USER REGISTRATION ********************************/
 
-router.get('/register', csrfProtection, (req, res) => {
+
+router.get('/signup', csrfProtection, (req, res) => {
   //connect to user database
   const user = db.User.build();
 
@@ -43,7 +45,7 @@ router.get('/register', csrfProtection, (req, res) => {
   });
 });
 
-router.post('/register', userValidators, csrfProtection, asyncHandler(async (req, res) => {
+router.post('/signup', userValidators, csrfProtection, asyncHandler(async (req, res) => {
   //destructur user inputs
   const {
     username,
