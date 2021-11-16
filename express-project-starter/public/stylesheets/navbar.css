@@ -1,0 +1,55 @@
+body {
+    background-color: #EDEFF5;
+    margin: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.nav {
+    height: 50px;
+    background-color: #C8D7E4;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    border-bottom: 1px solid #102863;
+
+}
+
+.nav > a {
+    color: #102863;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: x-large;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+}
+
+#search {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    top: 15px;
+}
+
+#search input {
+    width: 50%;
+    margin-right: 25px;
+}
+
+#user-nav {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+    top: -6px;
+}
+
+button {
+  background-color: #F5C25D;
+}
+
+#user-nav button {
+    margin-left: 5px;
+}

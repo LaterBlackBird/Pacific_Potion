@@ -29,6 +29,13 @@ body, header, nav {
   top: 8px;
 }
 
+.nav > h1 a {
+  color: #102863;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: x-large;
+}
+
 p {
   margin: 0px;
 }
@@ -44,9 +51,14 @@ p {
   background-color:  #C8D7E4;
 }
 
+#user-nav {
+  text-align: end;
+}
+
 #searchbar {
   flex: center;
-  width: 25%;
+  width: 40%;
+  height: 35px;
   border-radius: 5px;
 }
 
