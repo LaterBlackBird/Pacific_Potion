@@ -1,0 +1,8 @@
+body {
+    background-image: url('../images/home-banner.png');
+}
+
+#header {
+    height: 300px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+}

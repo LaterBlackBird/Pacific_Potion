@@ -1,25 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-// GET logged in front page
-<<<<<<< HEAD
-router.get('/', function(req, res, next) {
-<<<<<<< HEAD
-  res.render('index', { title: 'PacificPotion' });
-=======
-=======
-router.get('/', function (req, res, next) {
->>>>>>> main
-
-  // if logged in
-  res.render('index', { title: 'Pacific Potion Home' });
-
->>>>>>> main
-});
-
 // GET not logged in front page
-router.get('/notLoggedIn', function (req, res, next) {
-  res.render('loggedOutHome', { title: 'Home' });
+router.get('/', function (req, res, next) {
+  res.render('home');
+})
+
+router.get('/i', (req, res, next) => {
+  res.render('index', { title: "Pacific Potion" })
 })
 
 // GET inventory page
