@@ -48,9 +48,6 @@ form {
   position: relative;
   width: 450px;
   left: 30px;
-  /* top: 20%;
-  left: 25%; */
-  /* background-color: #C8D7E4 */
 }
 
 form div {
@@ -72,8 +69,6 @@ form div input {
 
 button {
   background-color: #F5C25D;
-  /* background-color: #8C5E1D; */
-  /* font-weight: 600; */
 }
 
 html {
@@ -81,14 +76,3 @@ html {
   width: 100%;
   background-color: #EDEFF5
 }
-
-
-/* 
-
-Main background color: #EDEFF5
-Box/div color: #C8D7E4
-Title text: #102863
-Links: #8C5E1D
-Unknown: #F5C25D 
-
-*/
