@@ -1,3 +1,6 @@
+const { check } = require('express-validator');
+const db = require('../db/models');
+
 const userValidators = [
     check('username')
         .exists({ checkFalsy: true })
@@ -12,7 +15,7 @@ const userValidators = [
         .isEmail()
         .withMessage('Email Address is not a valid email')
         .custom((value) => {
-            return db.User.findOne({ where: { emailAddress: value } })
+            return db.User.findOne({ where: { email: value } })
                 .then((user) => {
                     if (user) {
                         return Promise.reject('The provided Email Address is already in use by another account');

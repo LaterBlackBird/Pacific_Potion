@@ -16,8 +16,10 @@ const router = express.Router();
 /********************** USER REGISTRATION ********************************/
 
 router.get('/user/register', csrfProtection, (req, res) => {
+  //connect to user database
   const user = db.User.build();
 
+  //show the user signup form and fill user information if necessary
   res.render('signup-form', {
     title: 'Register',
     user,
@@ -26,6 +28,7 @@ router.get('/user/register', csrfProtection, (req, res) => {
 });
 
 router.post('/user/register', userValidators, csrfProtection, asyncHandler(async (req, res) => {
+  //destructur user inputs
   const {
     username,
     role,
@@ -33,21 +36,27 @@ router.post('/user/register', userValidators, csrfProtection, asyncHandler(async
     password
   } = req.body;
 
+  //connect to user database and stage inputs
   const user = await db.User.build({
     username,
     role,
     email
   });
 
+  //check user input validation
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
+    //hash password for storage
     const hashedPassword = await bcrypt.hash(password, 10);
     user.password = hashedPassword;
+    //save user inputs into database
     await user.save();
+    //keep user logged in
     loginUser(req, res, user)
     res.redirect('/');
   } else {
+    //resubmit to signup for with errors explained
     const errors = validatorErrors.array().map(error => error.msg);
     res.render('signup-form', {
       title: 'Register',
@@ -63,7 +72,7 @@ router.post('/user/register', userValidators, csrfProtection, asyncHandler(async
 /********************** USER LOGIN ********************************/
 
 router.get('/user/login', csrfProtection, (req, res) => {
-  //go to the login page
+  //navigate to the login page
   res.render('login', {
     title: 'Login',
     csrfToken: req.csrfToken(),
@@ -77,25 +86,33 @@ router.post('/user/login', csrfProtection, loginValidators, asyncHandler(async (
     password,
   } = req.body;
 
+  //check for errors and setup for custom errors
   let errors = [];
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
+    //find user in the database
     const user = await db.User.findOne({ where: { username } });
 
+    //user found in database
     if (user !== null) {
+      //verify password hash
       const passwordMatch = await bcrypt.compare(password, user.password.toString());
       if (passwordMatch) {
+        //keep user logged in
         loginUser(req, res, user)
         return res.redirect('/');
       }
     }
+    //handle login failure
     errors.push('Login failed for the provided email address and password');
 
   } else {
+    //handle input error validation
     errors = validatorErrors.array().map((error) => error.msg);
   }
 
+  //display the login page again with errors 
   res.render('login', {
     title: 'Login',
     username,
