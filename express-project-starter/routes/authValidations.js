@@ -7,7 +7,7 @@ const userValidators = [
         .withMessage('Please provide a value for Username')
         .isLength({ max: 20 })
         .withMessage('Username must not be more than 20 characters long'),
-    check('emailAddress')
+    check('email')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Email Address')
         .isLength({ max: 255 })
@@ -38,7 +38,7 @@ const userValidators = [
 
 
 const loginValidators = [
-    check('emailAddress')
+    check('username')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Email Address'),
     check('password')

@@ -49,7 +49,7 @@ router.post('/signup', userValidators, csrfProtection, asyncHandler(async (req, 
   //destructur user inputs
   const {
     username,
-    role,
+    // role,
     email,
     password
   } = req.body;
@@ -57,7 +57,7 @@ router.post('/signup', userValidators, csrfProtection, asyncHandler(async (req, 
   //connect to user database and stage inputs
   const user = await db.User.build({
     username,
-    role,
+    role: "user",
     email
   });
 
@@ -76,6 +76,7 @@ router.post('/signup', userValidators, csrfProtection, asyncHandler(async (req, 
   } else {
     //resubmit to signup for with errors explained
     const errors = validatorErrors.array().map(error => error.msg);
+    console.log(errors)
     res.render('signup-form', {
       title: 'Register',
       user,

@@ -4,11 +4,12 @@ const loginUser = (req, res, user) => {
     req.session.auth = {
         userId: user.id
     };
+    console.log(req.session)
 };
 
 const restoreUser = async (req, res, next) => {
     if (req.session.auth) {
-        const { userId } = req.session.auth;
+        const { userId } = db.Session.find;
 
         try {
             const user = await db.User.findByPk(userId);
@@ -35,7 +36,6 @@ const logoutUser = (req, res) => {
 const requireAuth = (req, res, next) => {
     if (!res.locals.authenticated) return res.redirect('/user/login');
     else return next();
-    // next();
 }
 
 const checkPermissions = (book, currentUser) => {
