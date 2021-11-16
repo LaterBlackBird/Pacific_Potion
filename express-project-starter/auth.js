@@ -1,31 +1,31 @@
 const db = require('./db/models')
 
-const loginUser = (req, res, user) => {
+const loginUser = async (req, res, user) => {
     req.session.auth = {
         userId: user.id
     };
 };
 
 const restoreUser = async (req, res, next) => {
-    if (req.session.auth) {
-        const { userId } = req.session.auth;
+        if (req.session.auth) {
+            const { userId } = req.session.auth;
 
-        try {
-            const user = await db.User.findByPk(userId);
+            try {
+                const user = await db.User.findByPk(userId);
 
-            if (user) {
-                res.locals.authenticated = true;
-                res.locals.user = user;
-                next();
+                if (user) {
+                    res.locals.authenticated = true;
+                    res.locals.user = user;
+                    next();
+                }
+            } catch (error) {
+                res.locals.authenticated = false;
+                next(error);
             }
-        } catch (error) {
+        } else {
             res.locals.authenticated = false;
-            next(error);
-        }
-    } else {
-        res.locals.authenticated = false;
-        next();
-    };
+            next();
+        };
 };
 
 const logoutUser = (req, res) => {
@@ -35,21 +35,20 @@ const logoutUser = (req, res) => {
 const requireAuth = (req, res, next) => {
     if (!res.locals.authenticated) return res.redirect('/user/login');
     else return next();
-    // next();
 }
 
-const checkPermissions = (book, currentUser) => {
-    if (book.userId !== currentUser.id) {
-        const err = new Error('Illegal operation.');
-        err.status = 403; // Forbidden
-        throw err;
-    }
-};
+// const checkPermissions = (book, currentUser) => {
+//     if (book.userId !== currentUser.id) {
+//         const err = new Error('Illegal operation.');
+//         err.status = 403; // Forbidden
+//         throw err;
+//     }
+// };
 
 module.exports = {
     loginUser,
     restoreUser,
     logoutUser,
     requireAuth,
-    checkPermissions
+    // checkPermissions
 };

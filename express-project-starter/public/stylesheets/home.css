@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EDEFF5;
+}
+
+#header {
+    background-image: url('../images/new-homebanner.png');
+    height: 300px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+#user-status {
+    width: 200px;
+    height: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    position: relative;
+    left: 75%;
+    top: -75px;
+    background-color: #C8D7E4;
+    text-align: center;
+    padding: 15px 5px;
+    border-radius: 10px;
+}
+
+#searchbar {
+    position: relative;
+    left: 75%;
+    top: -50px;
+}
+
+#searchbar input {
+    padding: 3px;
+}
+
+#searchbar button {
+    background: url(icn_nav_search.svg) no-repeat center;
+    background-color: #F5C25D;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 5px;
+}
+
+#potion-types {
+    position: relative;
+    width: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    left: 75%;
+    top: -35px;
+    text-align: center;
+
+}
+
+#recent {
+    position: relative;
+    top: -150px;
+    left: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    height: 300px;
+    width: 60%;
+    padding: 10px;
+    background-color: #C8D7E4;
+    border-radius: 10px;
+}
+
+#recent > h2 {
+    padding-left: 10px;
+}
