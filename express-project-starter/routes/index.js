@@ -21,7 +21,7 @@ router.get('/inventory', function (req, res, next) {
 
 // GET login page
 router.get('/login', function (req, res, next) {
-  res.render('login', { title: 'Login' });
+  res.render('login', { title: 'Log In' });
 })
 
 // GET register page
