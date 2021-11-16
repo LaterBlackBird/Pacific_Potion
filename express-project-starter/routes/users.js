@@ -15,7 +15,7 @@ const router = express.Router();
 
 /********************** USER REGISTRATION ********************************/
 
-router.get('/user/register', csrfProtection, (req, res) => {
+router.get('/register', csrfProtection, (req, res) => {
   //connect to user database
   const user = db.User.build();
 
@@ -27,7 +27,7 @@ router.get('/user/register', csrfProtection, (req, res) => {
   });
 });
 
-router.post('/user/register', userValidators, csrfProtection, asyncHandler(async (req, res) => {
+router.post('/register', userValidators, csrfProtection, asyncHandler(async (req, res) => {
   //destructur user inputs
   const {
     username,
@@ -71,7 +71,7 @@ router.post('/user/register', userValidators, csrfProtection, asyncHandler(async
 
 /********************** USER LOGIN ********************************/
 
-router.get('/user/login', csrfProtection, (req, res) => {
+router.get('/login', csrfProtection, (req, res) => {
   //navigate to the login page
   res.render('login', {
     title: 'Login',
@@ -79,7 +79,7 @@ router.get('/user/login', csrfProtection, (req, res) => {
   });
 });
 
-router.post('/user/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
+router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
   //destructure user inputs
   const {
     username,
@@ -112,7 +112,7 @@ router.post('/user/login', csrfProtection, loginValidators, asyncHandler(async (
     errors = validatorErrors.array().map((error) => error.msg);
   }
 
-  //display the login page again with errors 
+  //display the login page again with errors
   res.render('login', {
     title: 'Login',
     username,
@@ -125,9 +125,9 @@ router.post('/user/login', csrfProtection, loginValidators, asyncHandler(async (
 
 /********************** USER LOGOUT ********************************/
 
-router.post('/user/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   logoutUser(req, res);
-  res.redirect('/user/login');
+  res.redirect('/users/login');
 });
 
 module.exports = router;
