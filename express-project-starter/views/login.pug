@@ -1,20 +1,18 @@
 extends layout.pug
-include utils.pug
+
 block content
-    h1= title
-    //- display errors if any
-    +validationErrorSummary(errors)
+    link(rel='stylesheet' href='/stylesheets/login.css')
+    div(id="formDiv")
+        form(action='/login' method='post')
+            h1= title
+            input(type='hidden' name='_csrf' value=csrfToken)
+            div
+                label(for='username') Username
+                input(name='username' type='text' placeholder="Name..." id='username' required) 
+            div
+                label(for='password') Password 
+                input(name='password' type='password' id='password' required)
+            div(class="buttons")
+                button Log In
+                button(href='/demo_user') Demo User
 
-    form(action='/login' method='post')
-        input(type='hidden' name='_csrf' value=csrfToken)
-
-        label(for='username') Username
-        input(name='username' type='text' id='username' value=username required)
-        label(for='password') Password
-
-        input(name='password' type='password' id='password' required)
-        input(type='submit' value='Login')
-
-    p='not a member?'
-    a(href='/signup') Sign Up
-    a(href='/demo_user') Demo User

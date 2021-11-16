@@ -3,21 +3,24 @@ include utils.pug
 block content
     //- display errors if any
     +validationErrorSummary(errors)
-
-    form(action="/signup" method="post" class="new-user")
-        input(type="hidden" value=csrfToken name="_csrf")
-        div
-            label(for="username") Username
-            input(type="text" name="username" value=user.username required)
-        div
-            label(for="email") Email Address
-            input(type="text" name="email" value=user.email required)
-        div
-            label(for="password") Password
-            input(type="password" name="password" required)
-        div
-            label(for="confirm-pw") Confirm Password
-            input(type="password" name="confirm-pw" required)
-        div
-            button Create User
-            button Reset
+    link(rel='stylesheet' href='/stylesheets/login.css')
+    div(id="formDiv")
+        form(action="/signup" method="post" class="new-user")
+            h1= title
+            input(type="hidden" value="/.+/" name="_csrf")
+            div
+                label(for="username") Username
+                input(type="text" placeholder="Name..." name="username" required)
+            div
+                label(for="email") Email Address
+                input(type="text" placeholder="you@yours.com" name="email" required)
+            div
+                label(for="password") Password
+                input(type="password" name="password" required)
+            div
+                label(for="confirm-pw") Confirm Password
+                input(type="password" name="confirm-pw" required)
+            div(class="buttons")
+                button Sign Up
+                button Reset
+                button Demo User

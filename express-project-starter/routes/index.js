@@ -17,6 +17,15 @@ router.get('/inventory', function (req, res, next) {
   res.render('inventory', { title: 'inventory' });
 })
 
+// GET login page
+router.get('/login', function (req, res, next) {
+  res.render('login', { title: 'Log In' });
+})
+
+// GET register page
+router.get('/signup', function (req, res, next) {
+  res.render('signup-form', { title: 'Sign Up'});
+})
 // GET search page
 router.get('/search', function (req, res, next) {
   res.render('search', { title: 'search' });
