@@ -6,10 +6,6 @@ router.get('/', function (req, res, next) {
   res.render('home');
 })
 
-router.get('/i', (req, res, next) => {
-  res.render('index', { title: "Pacific Potion" })
-})
-
 // GET inventory page
 router.get('/inventory', function (req, res, next) {
   res.render('inventory', { title: 'inventory' });
