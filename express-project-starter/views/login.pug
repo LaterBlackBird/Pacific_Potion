@@ -6,7 +6,6 @@ block content
         form(action='/login' method='post')
             h1= title
             input(type='hidden' name='_csrf' value=csrfToken)
-    
             div
                 label(for='username') Username
                 input(name='username' type='text' id='username' required) 
