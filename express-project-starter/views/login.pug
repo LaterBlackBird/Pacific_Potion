@@ -1,16 +1,16 @@
 extends layout.pug
-    block content
-        h1= title
-        form(action='/login' method='post')
-            input(type='hidden' name='_csrf' value=csrfToken)
+block content
+    h1= title
+    form(action='/login' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
 
-            label(for='username') Username
-            input(name='username' type='text' id='username' required) 
-            label(for='password') Password 
+        label(for='username') Username
+        input(name='username' type='text' id='username' required) 
+        label(for='password') Password 
 
-            input(name='password' type='password' id='password' required)
-            input(type='submit' value='Login')
-            
-        p='not a member?'
-        a(href='/sign_up') Sign Up
-        a(href='/demo_user') Demo User
+        input(name='password' type='password' id='password' required)
+        input(type='submit' value='Login')
+        
+    p='not a member?'
+    a(href='/sign_up') Sign Up
+    a(href='/demo_user') Demo User
