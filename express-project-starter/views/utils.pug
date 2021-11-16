@@ -2,6 +2,6 @@ mixin validationErrorSummary(errors)
   if errors
     div.errorsContainer
       p.errorHeading The following error(s) occurred:
-      ul
+      ul.errorList
         each error in errors
-          li= error
+          li.errorItems= error

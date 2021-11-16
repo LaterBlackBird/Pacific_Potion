@@ -1,0 +1,28 @@
+.errorsContainer {
+  border: red solid 3px;
+  border-radius: 5px;
+  background-color: rgb(253, 0, 0, 0.25);
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 5px 20px;
+  margin: 20px 0px;
+}
+
+.errorHeading {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: rgb(150, 0, 0);
+  align-self: center;
+}
+
+.errorList{
+    display: flex;
+    flex-direction: column;
+}
+
+.errorItems {
+  color: rgb(150, 0, 0);
+  align-self: center;
+}
