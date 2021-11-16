@@ -1,3 +1,125 @@
-h1 {
-    color: #555555;
+#siteHeader {
+    color:  #102863;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    position: relative;
+    top: 0px;
+    z-index: 70;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+body {
+    background-color: #EDEFF5;
+}
+
+#signUp {
+    position: absolute;
+    left: 1260px;
+    bottom: 20px;
+    top: 20px;
+    background-color:#8C5E1D;
+}
+
+#signIn {
+    position: absolute;
+    left: 1201px;
+    bottom: 20px;
+    background-color:#8C5E1D;
+}
+
+.searchBox {
+    flex: 1;
+    padding: 4px 80px 3px 8px;
+    background-color: #C8D7E4;
+}
+
+.searchSubmit{
+    display: inline-block;
+    height: 27px;
+    position: absolute;
+    width: 22px;
+    background: url(icn_nav_search.svg) no-repeat;
+    background-color: #F5C25D;
+}
+
+#searchy {
+    position: relative;
+    left: 1170px;
+    top: 300px;
+}
+
+#title {
+    position: relative;
+    left: 35px;
+    font-size: 50px;
+}
+
+.box {
+  position: relative;
+  left:1200px;
+  height: 200px;
+  width: 200px;
+  background-color: #C8D7E4;
+  color: #fff;
+  padding: 10px;
+  border: solid 3px black;
+  margin: 0;
+  border-radius: 15px 15px
+}
+
+.box > button {
+    display: flex;
+    background-color:  #8C5E1D;
+    color: white;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    width: 100px;
+    position: relative;
+    left: 42px;
+    border-radius: 5px 25px;
+
+}
+
+.box > #login {
+    position: relative;
+    top:80px;
+    font-weight: bold
+}
+
+.box > #signin {
+    position: relative;
+    top:40px;
+    font-weight: bold
+}
+
+.box > button:hover {
+    background-color:  #F5C25D; }
+
+.recentPotions {
+    display: flex;
+    position: relative;
+    bottom:200px;
+    left: 200px;
+    height: 400px;
+  width: 600px;
+  background-color: #f4f2e9;
+  color: #102863;
+  padding: 10px;
+  border: solid 3px black;
+  margin: 0;
+  justify-content: center;
+}
+
+.recentPotions > h2 {
+ font-weight: bolder;
+}
+
+.potionTag > p {
+    position: relative;
+    left: 1200px;
+    bottom: 200px;
+
 }
