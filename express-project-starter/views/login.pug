@@ -1,16 +1,20 @@
 extends layout.pug
+include utils.pug
 block content
     h1= title
+    //- display errors if any
+    +validationErrorSummary(errors)
+
     form(action='/login' method='post')
         input(type='hidden' name='_csrf' value=csrfToken)
 
         label(for='username') Username
-        input(name='username' type='text' id='username' required) 
-        label(for='password') Password 
+        input(name='username' type='text' id='username' value=username required)
+        label(for='password') Password
 
         input(name='password' type='password' id='password' required)
         input(type='submit' value='Login')
-        
+
     p='not a member?'
-    a(href='/sign_up') Sign Up
+    a(href='/signup') Sign Up
     a(href='/demo_user') Demo User

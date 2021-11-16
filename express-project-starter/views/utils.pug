@@ -1,0 +1,7 @@
+mixin validationErrorSummary(errors)
+  if errors
+    div.errorsContainer
+      p.errorHeading The following error(s) occurred:
+      ul
+        each error in errors
+          li= error
