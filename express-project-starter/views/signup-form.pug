@@ -2,7 +2,7 @@ extends layout.pug
 
 block content
     form(action="/signup" method="post" class="new-user")
-        input(type="hidden" value="/.+/" name="_csrf")
+        input(type="hidden" value=csrfToken name="_csrf")
         div
             label(for="username") Username
             input(type="text" name="username" required)
