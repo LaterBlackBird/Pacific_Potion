@@ -28,6 +28,7 @@ h1 {
   text-align: center;
   margin-bottom: 30px;
   margin-top: 30px;
+  color: #102863
 }
 
 p {
@@ -40,6 +41,7 @@ form {
   height: 250px;
   top: 20%;
   left: 25%;
+  background-color: #C8D7E4
 }
 
 form div {
@@ -56,3 +58,24 @@ form div input {
   position: absolute;
   left: 10%;
 }
+
+button {
+  background-color: #F5C25D;
+  /* background-color: #8C5E1D; */
+  /* font-weight: 600; */
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #EDEFF5
+}
+/* 
+
+Main background color: #EDEFF5
+Box/div color: #C8D7E4
+Title text: #102863
+Links: #8C5E1D
+Unknown: #F5C25D 
+
+*/
