@@ -26,22 +26,31 @@ h1 {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  color: #102863
+  color: #102863;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 p {
   margin: 0px;
 }
 
-form {
+#formDiv {
   position: absolute;
-  width: 450px;
-  height: 250px;
-  top: 20%;
+  width: 550px;
+  top: 100px;
   left: 25%;
-  background-color: #C8D7E4
+  background-color: #C8D7E4;
+  border-radius: 5px;
+}
+
+form {
+  position: relative;
+  width: 450px;
+  left: 30px;
+  /* top: 20%;
+  left: 25%; */
+  /* background-color: #C8D7E4 */
 }
 
 form div {
@@ -53,10 +62,12 @@ form div {
 form div input {
   margin-left: 10px;
   width: 300px;
+  border-radius: 5px;
 }
+
 .buttons {
-  position: absolute;
-  left: 10%;
+  position: relative;
+  margin-bottom: 25px;
 }
 
 button {
@@ -70,6 +81,8 @@ html {
   width: 100%;
   background-color: #EDEFF5
 }
+
+
 /* 
 
 Main background color: #EDEFF5

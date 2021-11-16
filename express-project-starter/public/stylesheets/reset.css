@@ -43,7 +43,7 @@ p {
 #searchbar {
   flex: center;
   min-width: 50%;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 button {
