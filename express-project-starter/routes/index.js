@@ -26,7 +26,7 @@ router.get('/login', function (req, res, next) {
 
 // GET register page
 router.get('/signup', function (req, res, next) {
-  res.render('signup-form');
+  res.render('signup-form', { title: 'Sign Up'});
 })
 
 // GET search page

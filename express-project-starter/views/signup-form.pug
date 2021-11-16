@@ -1,7 +1,9 @@
 extends layout.pug
 
 block content
+    link(rel='stylesheet' href='/stylesheets/login.css')
     form(action="/signup" method="post" class="new-user")
+        h1= title
         input(type="hidden" value="/.+/" name="_csrf")
         div
             label(for="username") Username
