@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #siteHeader {
     color:  #102863;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
@@ -122,4 +123,16 @@ body {
     left: 1200px;
     bottom: 200px;
 
+=======
+/*
+Main background color: #EDEFF5
+Box/div color: #C8D7E4
+Title text: #102863
+Links: #8C5E1D
+Unknown: #F5C25D
+*/
+
+h1 {
+    color: #555555;
+>>>>>>> main
 }
