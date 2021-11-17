@@ -1,0 +1,19 @@
+extends layout.pug
+include utils.pug
+block content
+    link(rel='stylesheet' href='/stylesheets/new-potion.css')
+        div(id="frmDiv")
+            form(action="/potions/new-potion" method="post" class="created-potion")
+            h1= title
+            input(type="hidden" value=csrfToken name="_csrf")
+            div
+                label(for="name") Potion Name
+                input(type="text" placeholder="Potion Name..." name="name" required)
+            div
+                label(for="description") Description
+                textarea(id="description" name="description")
+            div
+                select(id="type_id" name="type_id" required)
+                    each type in potionTypes
+                        option(value=type.id)= type.type
+            button submit
