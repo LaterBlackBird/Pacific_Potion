@@ -1,7 +1,7 @@
 extends layout.pug
 
-mixin loadComments(comments)
-    li= `By: ${user} ${comment}`
+mixin loadComment(x, cText)
+    li= `${x}: ${cText}`
 
 block content
     link(rel='stylesheet' href='/stylesheets/potion_detail.css')
@@ -26,4 +26,5 @@ block content
                 button(class='commentButton' type="submit") Edit Comment
     div#previousCommentsContainer
         h2 Comments:
-        //- +commentMixin
+            each comment in comments
+                +loadComment(passArr[comment.user_id - 1].username, comment.comment)

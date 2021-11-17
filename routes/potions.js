@@ -10,16 +10,26 @@ const router = express.Router();
 const { comment, user } = require('../public/javascripts/potionsRequirement');
 
 
-/* GET users listing. */
+/* VIEW POTION. */
 router.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
   const comments = await db.Comment.findAll({
     where: { potion_id: req.params.id }
   })
-  
-  console.log('****************');
-  console.log(comments);
-  console.log('****************');
-  res.render('potion-detail', { comments });
+  const users = await db.User.findAll();
+  const userIds = [];
+  const passArr = [];
+  users.forEach(user => {
+    userIds.push(user.id);
+  })
+  comments.forEach(comment => {
+    passArr.push(users[userIds[comment.user_id - 1]]);
+    // const userNumber = await db.User.findByPk(`${comment.user_id}`);
+    // let uName = userNumber.username;
+    // usernamesArr.push(uName);
+  })
+  console.log('passArr is', passArr);
+  // console.log(users[2].id);
+  res.render('potion-detail', { passArr, comments });
 }));
 
 
