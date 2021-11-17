@@ -9,11 +9,12 @@ block content
             input(type='hidden' name='_csrf' value=csrfToken)
             div
                 label(for='username') Username
-                input(name='username' type='text' placeholder="Name..." id='username' required)
+                input(name='username' type='text' placeholder="Name..." id='username')
             div
                 label(for='password') Password
-                input(name='password' type='password' id='password' required)
+                input(name='password' type='password' id='password')
             div(class="buttons")
                 button(type="submit") Log In
-                button(href='/demo_user') Demo User
+    form(action="/demo", method="post")
+        button(type="submit") Demo User
     +validationErrorSummary(errors)
