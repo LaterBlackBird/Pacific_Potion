@@ -3,15 +3,48 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('PotionTypes', [
-      { name: 'Healing', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Buff', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Utility', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Cure', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Combat', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Consumable', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Topical', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Poison', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Magical Effect', createdAt: new Date(), updatedAt: new Date() }
+      {
+        name: 'Healing',
+        image: 'https://i.imgur.com/RYKtJ0Q.png',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Buff',
+        image: 'https://i.imgur.com/TS6Bcbr.png',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Utility',
+        image: 'https://i.imgur.com/UkUlczj.png',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Combat',
+        image: 'https://i.imgur.com/Eb5yNxw.png',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Poison',
+        image: 'https://i.imgur.com/CAawjOY.png',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Enchantment',
+        image: 'https://i.imgur.com/UVodTbe.png',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Illusion',
+        image: 'https://i.imgur.com/zVwEYOh.png',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
     ]);
   },
 
