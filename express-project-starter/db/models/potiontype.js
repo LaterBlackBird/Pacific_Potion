@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   PotionType.associate = function(models) {
-    PotionType.belongsTo(models.Potion, {foreignKey: 'potionId'});
+    PotionType.belongsTo(models.Potion, {foreignKey: 'type_id'});
   };
   return PotionType;
 };
