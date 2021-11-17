@@ -1,0 +1,131 @@
+#potion_detail_container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 900px;
+  margin: auto;
+  background-color: #c8d7e4;
+  border-radius: 5px;
+  margin-top: 125px;
+}
+
+#potion_detail_grid {
+  display: grid;
+  grid-template-areas:
+    'a c'
+    'a d'
+    'a e'
+    'b f';
+  grid-template-columns: 1fr 3fr;
+  column-gap: 20px;
+  row-gap: 10px;
+  margin: 20px auto;
+}
+
+#inventoryAddButton {
+  grid-area: b;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+#imgDiv {
+  grid-area: a;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#potionImage {
+  box-sizing: border-box;
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+#potionDescriptionContainer {
+  box-sizing: border-box;
+  height: 125px;
+  width: 500px;
+  overflow-y: auto;
+  border: 1px solid black;
+}
+
+#potionName {
+  color: #102863;
+  margin-bottom: 0;
+}
+
+#createdBy {
+  color: #102863;
+  margin-top: 0px;
+  font-size: small;
+}
+
+#descriptionText {
+  color: #102863;
+}
+
+#potionEditButtonsContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#potionEditButton {
+  width: 100px;
+  margin: 5px;
+}
+
+#potionDeleteButton {
+  width: 100px;
+  margin: 5px;
+}
+
+#addCommentContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 900px;
+  margin: auto;
+  background-color: #c8d7e4;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+#commentsForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#potionComment {
+  margin: 25px 0px 5px 0px;
+  width: 800px;
+  height: 100px;
+  max-width: 800px;
+  min-width: 800px;
+}
+
+#commentButtonContainer {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  height: 25px;
+}
+
+.commentButton {
+  margin: 0 15px;
+}
+
+#previousCommentsContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 900px;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 25px;
+}

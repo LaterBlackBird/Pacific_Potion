@@ -1,0 +1,26 @@
+extends layout.pug
+
+block content
+    link(rel='stylesheet' href='/stylesheets/potion_detail.css')
+    div#potion_detail_container
+        div#potion_detail_grid
+            #imgDiv
+                img#potionImage(src='/images/blue.png', alt="a picture of a potion")
+            form#inventoryAddButton(action="/api/user/:id/inventory", method="post")
+                button(type="submit") Add to Inventory
+            h2#potionName # {potion.name}
+            p#createdBy # {potion.username}
+            div#potionDescriptionContainer
+                p#descriptionText # {potion.description}
+            div#potionEditButtonsContainer
+                button#potionEditButton(name="potion_edit") Edit Potion
+                button#potionDeleteButton(name="potion_delete") Delete Potion
+    div#addCommentContainer
+        form#commentsForm(action="/comments", method="post")
+            textarea#potionComment(name="potionComment" placeholder='Add a comment:')
+            div#commentButtonContainer
+                button(class='commentButton' type="submit") Add Comment
+                button(class='commentButton' type="submit") Edit Comment
+    div#previousCommentsContainer
+        h2 Comments:
+        //- +commentMixin
