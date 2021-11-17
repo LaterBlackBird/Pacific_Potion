@@ -11,8 +11,10 @@ html
         input(type="text" name="searchbar" placeholder="Search for a potion..." id="searchbar")
         button Search
       div(id="user-nav")
-        button(href="/signup") Sign Up
-        button(href="/login") Log In
+        a(href="/signup")
+          button Sign Up
+        a(href="/login")
+          button(href="/login") Log In
 
     if error
       div(id='err')
