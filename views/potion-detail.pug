@@ -15,3 +15,12 @@ block content
             div#potionEditButtonsContainer
                 button#potionEditButton(name="potion_edit") Edit Potion
                 button#potionDeleteButton(name="potion_delete") Delete Potion
+    div#addCommentContainer
+        form#commentsForm(action="/comments", method="post")
+            textarea#potionComment(name="potionComment" placeholder='Add a comment:')
+            div#commentButtonContainer
+                button(class='commentButton' type="submit") Add Comment
+                button(class='commentButton' type="submit") Edit Comment
+    div#previousCommentsContainer
+        h2 Comments:
+        //- +commentMixin
