@@ -3,8 +3,6 @@ include utils.pug
 block content
     link(rel='stylesheet' href='/stylesheets/login.css')
     link(rel='stylesheet' href='/stylesheets/error.css')
-    //- display errors if any
-    +validationErrorSummary(errors)
     div(id="formDiv")
         form(action="/signup" method="post" class="new-user")
             h1= title
@@ -22,6 +20,8 @@ block content
                 label(for="confirm-pw") Confirm Password
                 input(type="password" name="confirm-pw" required)
             div(class="buttons")
-                button Sign Up
-                button Reset
-                button Demo User
+                button(type="submit") Sign Up
+                button(id="resetButton") Reset
+                button(href='/demo_user') Demo User
+    //- display errors if any
+    +validationErrorSummary(errors)

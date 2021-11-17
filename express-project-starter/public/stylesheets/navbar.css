@@ -2,6 +2,8 @@ body {
     background-color: #EDEFF5;
     margin: 0;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav {
@@ -19,7 +21,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: x-large;
-    position: absolute;
+    position: relative;
     top: 11px;
     left: 10px;
 }
@@ -29,7 +31,7 @@ body {
     display: flex;
     align-content: center;
     justify-content: center;
-    top: 15px;
+    top: -12px;
 }
 
 #search input {
@@ -43,7 +45,7 @@ body {
     align-content: center;
     justify-content: flex-end;
     margin-right: 20px;
-    top: -6px;
+    top: -33px;
 }
 
 button {
