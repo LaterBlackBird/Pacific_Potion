@@ -24,6 +24,7 @@ body {
     position: relative;
     top: 11px;
     left: 10px;
+    z-index: 1;
 }
 
 #search {
