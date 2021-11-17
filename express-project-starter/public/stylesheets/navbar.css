@@ -55,3 +55,12 @@ button {
 #user-nav button {
     margin-left: 5px;
 }
+
+#err {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    width: 40%;
+}
