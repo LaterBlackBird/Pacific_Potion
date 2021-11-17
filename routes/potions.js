@@ -16,19 +16,15 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
     where: { potion_id: req.params.id }
   })
   const users = await db.User.findAll();
-  const userIds = [];
+  const idOfEveryUser = [];
   const passArr = [];
   users.forEach(user => {
-    userIds.push(user.id);
+    idOfEveryUser.push(user.id);
   })
   comments.forEach(comment => {
-    passArr.push(users[userIds[comment.user_id - 1]]);
-    // const userNumber = await db.User.findByPk(`${comment.user_id}`);
-    // let uName = userNumber.username;
-    // usernamesArr.push(uName);
+    passArr.push(users[idOfEveryUser[comment.user_id - 1] - 1]);
   })
-  console.log('passArr is', passArr);
-  // console.log(users[2].id);
+
   res.render('potion-detail', { passArr, comments });
 }));
 
