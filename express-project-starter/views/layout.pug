@@ -3,13 +3,15 @@ html
   head
       block head
         title="Pacific Potion"
-        link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/navbar.css')
   body
     div(class="nav")
-      h1 Pacific Potion
-      input(type="text" name="searchbar" placeholder="Search for a potion..." id="searchbar")
-      div 
-        button Sign Up
-        button Log In
+      a(href='/') Pacific Potion
+      div(id="search")
+        input(type="text" name="searchbar" placeholder="Search for a potion..." id="searchbar")
+        button Search
+      div(id="user-nav")
+        button(href="/signup") Sign Up
+        button(href="/login") Log In
 
     block content
