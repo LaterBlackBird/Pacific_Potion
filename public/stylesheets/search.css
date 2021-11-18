@@ -1,0 +1,54 @@
+#results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 900px;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 125px;
+}
+
+#result-card {
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  grid-template-areas:
+    'a b'
+    'a c'
+    'a d';
+  grid-template-columns: 1fr 9fr;
+  column-gap: 10px;
+  width: 900px;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #c8d7e4;
+}
+
+#potion-image {
+  grid-area: a;
+  height: 100px;
+  width: 100px;
+}
+
+#potion-name {
+  grid-area: b;
+  height: 20px;
+  margin: 0;
+}
+
+#potion-type {
+  grid-area: c;
+  margin-top: 0;
+  font-size: small;
+  height: 10px;
+}
+
+#potion-description {
+  grid-area: d;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-height: 30px;
+}
