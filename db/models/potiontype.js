@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.STRING
   }, {});
   PotionType.associate = function (models) {
-    PotionType.belongsTo(models.Potion, { foreignKey: 'type_id' });
+    PotionType.hasMany(models.Potion, { foreignKey: 'type_id' });
   };
   return PotionType;
 };

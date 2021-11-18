@@ -5,9 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     type_id: DataTypes.INTEGER
   }, {});
-  Potion.associate = function(models) {
-    Potion.hasMany(models.Potion, {foreignKey: 'type_id'});
-    Potion.hasMany(models.Comment, {foreignKey: 'potion_id'});
+  Potion.associate = function (models) {
+    Potion.belongsTo(models.PotionType, { foreignKey: 'type_id' });
+    Potion.hasMany(models.Comment, { foreignKey: 'potion_id' });
   };
   return Potion;
 };
