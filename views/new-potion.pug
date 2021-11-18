@@ -2,7 +2,7 @@ extends layout.pug
 
     block content
         div(id="frmDiv")
-            form(action="/potions/new-potion" method="post")
+            form(action="/potion/add" method="post")
             h1= title
             input(type="hidden" value=csrfToken name="_csrf")
             div
