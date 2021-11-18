@@ -1,0 +1,5 @@
+extends layout.pug
+    block content
+        +validationErrorSummary(errors)
+            div(id="frmDiv")
+                form(action=`/potions/edit/${potion.id}` method="post")
