@@ -8,11 +8,12 @@ html
     div(class="nav")
       a(href='/') Pacific Potion
       div(id="search")
-        input(type="text" name="searchbar" placeholder="Search for a potion..." id="searchbar")
-        button Search
+        form(action="/search", method="post")
+          input(id="searchbar" type="text" name='search' autocomplete="off" placeholder="Search for a potion...")
+          button(type="submit") Search
       div(id="user-nav")
         if locals.authenticated
-          span Welcome, #{user.username} !
+          div Welcome, #{user.username} !
           form(action="/logout" method="post")
               button(type="submit") Logout
         else
@@ -23,9 +24,14 @@ html
           form(action="/demo" method="post")
             button(type="submit") Demo
       block content
+<<<<<<< HEAD
     //- if error
     //-   div(id='err')
     //-     h1 Oops. Acid spilled.
     //-     img(src='https://i.imgur.com/O5JXmQS.png')
     //-     h2 You've reached a 404. Please try again.
     //- else
+=======
+
+        div(id='searchbar')
+>>>>>>> main

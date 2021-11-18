@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+    link(rel='stylesheet' href='/stylesheets/search.css')
+    div(id='results-container')
+        if results
+            each result in results
+                a(id='result-card' href=`/potions/${result.id}`)
+                    img(id='potion-image' src=`${result.PotionType.image}`, alt="an image of a potion")
+                    h2#potion-name #{result.name}
+                    span#potion-type Type: #{result.PotionType.name}
+                    span#potion-description #{result.description}

@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
     background-color: #EDEFF5;
 }
 
@@ -29,6 +30,7 @@ body {
 #searchbar {
     position: relative;
     left: 75%;
+    width: 15%;
     top: -50px;
 }
 
