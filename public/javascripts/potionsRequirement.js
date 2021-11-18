@@ -23,7 +23,8 @@ window.addEventListener('DOMContentLoaded', event => {
 
         const newPtag = document.createElement('p');
         newPtag.innerText = newComment.value;
-        commentContainer.appendChild(newPtag);
+        newCommentDiv.appendChild(newPtag);
+        commentContainer.appendChild(newCommentDiv);
 
         return postNewComment('/potions/:id(\\d+)', newComment.value);
     });

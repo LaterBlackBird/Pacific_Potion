@@ -31,9 +31,10 @@
 }
 
 .commentItems {
-    background-color: #8C5E1D;
+    background-color: #102863;
     padding: 25px 100px;
-    margin: 25px 50px;
+    margin: 15px 50px;
     border-radius: 15px;
-    color: #EDEFF5;
+    color: #F5C25D;
+    border: 1px solid #EDEFF5;
 }
