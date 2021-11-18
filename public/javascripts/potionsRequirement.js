@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const ul = document.getElementById('previousCommentsContainer');
+    const ul = document.getElementById('commentContainer');
     const addCom = document.getElementById('addCom');
     const editCom = document.getElementById('editCom');
     let theirCommentArea = document.getElementById('potionComment');
