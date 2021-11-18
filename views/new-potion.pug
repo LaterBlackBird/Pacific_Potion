@@ -1,9 +1,8 @@
 extends layout.pug
-include utils.pug
-block content
-    link(rel='stylesheet' href='/stylesheets/new-potion.css')
+
+    block content
         div(id="frmDiv")
-            form(action="/potions/new-potion" method="post" class="created-potion")
+            form(action="/potions/new-potion" method="post")
             h1= title
             input(type="hidden" value=csrfToken name="_csrf")
             div
@@ -14,6 +13,7 @@ block content
                 textarea(id="description" name="description")
             div
                 select(id="type_id" name="type_id" required)
-                    each type in potionTypes
-                        option(value=type.id)= type.type
+                  if potionTypes
+                    each typ in potionTypes
+                        option(value=typ.id)= typ.typ
             button submit
