@@ -22,7 +22,7 @@ router.post('/', asyncHandler(async (req, res) => {
         search = search.charAt(0).toUpperCase() + search.slice(1);
         const results = await db.Potion.findAll({
             where: {
-                name: { [Op.substring]: search }
+                name: { [Op.iLike]: `%${search}%` }
             },
             include: db.PotionType
         });
