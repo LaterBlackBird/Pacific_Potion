@@ -13,6 +13,10 @@ router.get('/:id(\\d+)', function(req, res, next) {
   res.render('potion-detail');
 });
 
+router.get('/new-potion', (req, res) => {
+  res.render('new-potion');
+})
+
 
 
 /* GET new-potions */
