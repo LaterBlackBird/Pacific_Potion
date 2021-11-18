@@ -7,8 +7,6 @@ const { loginUser, logoutUser } = require('../auth')
 const { userValidators, loginValidators } = require('./authValidations')
 const router = express.Router();
 
-const { comment, user } = require('../public/javascripts/potionsRequirement');
-
 
 /* VIEW POTION. */
 router.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {

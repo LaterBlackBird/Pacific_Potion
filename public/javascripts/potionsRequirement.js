@@ -1,8 +1,6 @@
-// const db = require('../../db/models');
 
-// const comments = db.Comment.findAll({
-//     where: { potion_id: req.params.id }
-// })
-// console.log(comments);
+document.addEventListener('DOMContentLoaded', () => {
+    const ul = document.getElementById('addCom');
 
-// module.exports = comments;
+    
+})
