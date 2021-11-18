@@ -29,3 +29,11 @@
     margin: auto;
     margin-top: 25px;
 }
+
+.commentItems {
+    background-color: #8C5E1D;
+    padding: 25px 100px;
+    margin: 25px 50px;
+    border-radius: 15px;
+    color: #EDEFF5;
+}

@@ -17,6 +17,14 @@ window.addEventListener('DOMContentLoaded', event => {
     addCom.addEventListener('click', e => {
         console.log('Event Listener reached!')
         const newComment = document.getElementById('commentInput');
+        const commentContainer = document.getElementById('commentContainer');
+        const newCommentDiv = document.createElement("div");
+        newCommentDiv.setAttribute('class', 'commentItems');
+
+        const newPtag = document.createElement('p');
+        newPtag.innerText = newComment.value;
+        commentContainer.appendChild(newPtag);
+
         return postNewComment('/potions/:id(\\d+)', newComment.value);
     });
 });
