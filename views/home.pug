@@ -24,8 +24,8 @@ html
                     button(type="submit") Demo
 
         div(id='searchbar')
-            input(type="text" name='search' autocomplete="off" placeholder="Search for a potion...")
-            form(action="/search", method="get")
+            form(action="/search", method="post")
+                input(type="text" name='search' autocomplete="off" placeholder="Search for a potion...")
                 button(type="submit")
         div(id="potion-types")
             a(href="#") Type

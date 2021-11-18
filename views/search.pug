@@ -6,7 +6,7 @@ block content
         if results
             each result in results
                 a(id='result-card' href=`/potions/${result.id}`)
-                    img(id='potion-image' src='/images/blue.png', alt="an image of a potion")
+                    img(id='potion-image' src=`${result.PotionType.image}`, alt="an image of a potion")
                     h2#potion-name #{result.name}
                     span#potion-type # {result.potionType}
                     span#potion-description #{result.description}
