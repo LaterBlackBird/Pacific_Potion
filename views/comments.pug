@@ -1,4 +1,4 @@
-mixin Comments(commentText)
+mixin Comments(comment)
     link(rel="stylesheet" href="/stylesheets/comments.css")
     textarea#commentInput(placeholder="Write a comment here...")
     button#commentSubmit(type="submit") Add Comment
@@ -6,4 +6,4 @@ mixin Comments(commentText)
     h2#commentHeader Comments:
     if comments
         each comment in comments
-            li.commentItems= #{username} says: \n #{commentText}
+            li.commentItems= {comment.comment}
