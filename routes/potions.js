@@ -7,9 +7,15 @@ const { loginUser, logoutUser } = require('../auth')
 const { userValidators, loginValidators } = require('./authValidations')
 const router = express.Router();
 
-
 /* VIEW POTION. */
 router.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
+  const potion = await db.Potion.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: db.PotionType
+  });
+  
   const comments = await db.Comment.findAll({
     where: { potion_id: req.params.id }
   })
@@ -23,26 +29,24 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
     passArr.push(users[idOfEveryUser[comment.user_id - 1] - 1]);
   })
 
-  res.render('potion-detail', { passArr, comments });
+  res.render('potion-detail', { potion, passArr, comments });
 }));
-
-
 
 /* GET new-potions */
 router.get('/new-potion', csrfProtection, (req, res) => {
-    const potionTypes = db.PotionType.findAll()
-    return res.render('new-potion', {csrfToken:req.csrfToken(), potionTypes});
-  });
+  const potionTypes = db.PotionType.findAll()
+  return res.render('new-potion', { csrfToken: req.csrfToken(), potionTypes });
+});
 
 /* POST new-potions */
 
-  router.post('/new-potion', csrfProtection, asyncHandler(async(req, res) => {
-    const { name, description, type} = req.body
-    await Potion.create({
-      name,
-      description,
-      type
-    });
-     res.redirect('/');
-    }));
+router.post('/new-potion', csrfProtection, asyncHandler(async (req, res) => {
+  const { name, description, type } = req.body
+  await Potion.create({
+    name,
+    description,
+    type
+  });
+  res.redirect('/');
+}));
 module.exports = router;

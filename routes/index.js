@@ -151,4 +151,18 @@ router.post('/logout', (req, res) => {
   res.redirect('/');
 });
 
+
+
+/********************** DEMO LOGIN ********************************/
+
+router.post('/demo', asyncHandler(async (req, res) => {
+  const username = 'Demo User';
+  const demoInfo = await db.User.findOne({ where: { username } });
+  const { id } = demoInfo;
+  const user = { id: id };
+  loginUser(req, res, user)
+  res.redirect('/');
+}));
+
+
 module.exports = router;
