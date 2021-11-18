@@ -11,6 +11,7 @@ const indexRouter = require('./routes/index');
 const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');
 const potionsRouter = require('./routes/potions');
+const commentsRouter = require('./routes/comments');
 
 
 const app = express();

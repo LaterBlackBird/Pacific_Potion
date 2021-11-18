@@ -18,5 +18,6 @@ block content
                 button#potionEditButton(name="potion_edit") Edit Potion
                 button#potionDeleteButton(name="potion_delete") Delete Potion
     div#commentContainer
-        +Comments(passArr[comment.user_id - 1].username, comment.comment)
-
+        each comment in potion.Comments
+            p #{comment.comment}
+        //- +Comments
