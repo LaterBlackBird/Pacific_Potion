@@ -19,5 +19,6 @@ window.addEventListener('DOMContentLoaded', event => {
         console.log('Event Listener reached!')
         const newComment = document.getElementById('commentInput');
         let finResponse = postNewComment(`/potions/${potionId}`, newComment.value);
+        
     });
 });
