@@ -22,6 +22,18 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   res.render('potion-detail', { potion });
 }));
 
+/* MAKE NEW COMMENT ON POTION PAGE */
+// router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+//   console.log('Inside post route')
+//   const { userId } = req.session.auth;
+//   console.log(userId);
+//   await Comment.create({
+//     comment: req.body,
+//     user_id: userId,
+//     potion_id: req.params.id
+//   });
+// }))
+
 /* GET new-potions */
 router.get('/new-potion', csrfProtection, (req, res) => {
   const potionTypes = db.PotionType.findAll()
