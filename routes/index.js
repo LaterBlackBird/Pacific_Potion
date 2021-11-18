@@ -8,9 +8,14 @@ const { userValidators, loginValidators } = require('./authValidations')
 const router = express.Router();
 
 // GET not logged in front page
-router.get('/', function (req, res, next) {
-  res.render('home');
-})
+router.get('/', asyncHandler(async (req, res, next) => {
+  const potions = await db.Potion.findAll({
+    order: [['updatedAt']],
+    include: db.PotionType,
+    limit: 10
+  })
+  res.render('home', { potions });
+}));
 
 // GET inventory page
 router.get('/inventory', function (req, res, next) {
