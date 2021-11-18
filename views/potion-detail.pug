@@ -29,7 +29,7 @@ block content
     div#previousCommentsContainer
         h2 Comments:
             each comment in comments
-                +loadComment(passArr[comment.user_id - 1].username, comment.comment)
-    //- div#commentContainer
+                +loadComment(potion, passArr[comment.user_id - 1].username, comment.comment)
+    div#commentContainer
     //-     +Comments
 

@@ -22,10 +22,10 @@ html
             button(href="/login") Log In
           form(action="/demo" method="post")
             button(type="submit") Demo
-    if error
-      div(id='err')
-        h1 Oops. Acid spilled.
-        img(src='https://i.imgur.com/O5JXmQS.png')
-        h2 You've reached a 404. Please try again.
-    else
       block content
+    //- if error
+    //-   div(id='err')
+    //-     h1 Oops. Acid spilled.
+    //-     img(src='https://i.imgur.com/O5JXmQS.png')
+    //-     h2 You've reached a 404. Please try again.
+    //- else
