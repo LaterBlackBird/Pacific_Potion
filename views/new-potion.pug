@@ -1,10 +1,11 @@
 extends layout.pug
 
     block content
-        div(id="frmDiv")
-            form(action="/potions/new-potion" method="post")
-            h1= title
-            input(type="hidden" value=csrfToken name="_csrf")
+        +validationErrorSummary(errors)
+            div(id="frmDiv")
+                form(action="/potions/add" method="post")
+                h1= title
+                input(type="hidden" value=csrfToken name="_csrf")
             div
                 label(for="name") Potion Name
                 input(type="text" placeholder="Potion Name..." name="name" required)

@@ -19,6 +19,15 @@ window.addEventListener('DOMContentLoaded', event => {
         console.log('Event Listener reached!')
         const newComment = document.getElementById('commentInput');
         let finResponse = postNewComment(`/potions/${potionId}`, newComment.value);
-        
+        const commentContainer = document.getElementById("commentContainer");
+        const newCommentDiv = document.createElement("div");
+
+        newCommentDiv.setAttribute("class", "commentItems");
+        const newPTag = document.createElement("p");
+        newPTag.innerText = finResponse.comment;
+        console.log(finResponse.Object.comment);
+        console.log(newPTag);
+        newCommentDiv.appendChild(newPTag);
+        commentContainer.appendChild(newCommentDiv);
     });
 });

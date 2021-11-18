@@ -29,3 +29,12 @@
     margin: auto;
     margin-top: 25px;
 }
+
+.commentItems {
+    background-color: #102863;
+    padding: 25px 100px;
+    margin: 15px 50px;
+    border-radius: 15px;
+    color: #F5C25D;
+    border: 1px solid #EDEFF5;
+}
