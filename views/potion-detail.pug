@@ -5,7 +5,7 @@ mixin loadComment(username, cText)
 
 block content
     link(rel='stylesheet' href='/stylesheets/potion_detail.css')
-    script(src="../public/javascripts/potionsRequirement.js" type = "module")
+    script(src="/javascripts/potionsRequirement.js" type = "module")
     div#potion_detail_container
         div#potion_detail_grid
             #imgDiv
@@ -20,11 +20,11 @@ block content
                 button#potionEditButton(name="potion_edit") Edit Potion
                 button#potionDeleteButton(name="potion_delete") Delete Potion
     div#addCommentContainer
-        form#commentsForm()
+        form#commentsForm(action="/comments", method="post")
             textarea#potionComment(name="potionComment" placeholder='Add a comment:')
             div#commentButtonContainer
-                button(class='commentButton' id='addCom') Add Comment
-                button(class='commentButton' id='editCom') Edit Comment
+                button(class='commentButton' id='addCom' type="submit") Add Comment
+                button(class='commentButton' id='editCom' type="submit") Edit Comment
     div#previousCommentsContainer
         h2 Comments:
             each comment in comments
