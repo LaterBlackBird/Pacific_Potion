@@ -11,7 +11,7 @@ const Op = Sequelize.Op;
 
 
 router.post('/', asyncHandler(async (req, res) => {
-    const { search } = req.body
+    let { search } = req.body
     if (!search) {
         const results = await db.Potion.findAll({
             include: db.PotionType
@@ -19,11 +19,10 @@ router.post('/', asyncHandler(async (req, res) => {
         res.render('search', { results });
 
     } else {
+        search = search.charAt(0).toUpperCase() + search.slice(1);
         const results = await db.Potion.findAll({
             where: {
-                name: {
-                    [Op.iLike]: search
-                }
+                name: { [Op.substring]: search }
             },
             include: db.PotionType
         });
