@@ -3,7 +3,7 @@ mixin Comments
     link(rel="stylesheet" href="/stylesheets/comments.css")
     script(src="/javascripts/potionsRequirement.js" type = "module")
     textarea#commentInput(placeholder="Write a comment here...")
-    button#commentSubmit Add Comment
+    button(class="commentSubmit" id=potion.id) Add Comment
 
     h2#commentHeader Comments:
     if potion.Comments

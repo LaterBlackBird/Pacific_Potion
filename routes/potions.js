@@ -23,16 +23,17 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 }));
 
 /* MAKE NEW COMMENT ON POTION PAGE */
-// router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
-//   console.log('Inside post route')
-//   const { userId } = req.session.auth;
-//   console.log(userId);
-//   await Comment.create({
-//     comment: req.body,
-//     user_id: userId,
-//     potion_id: req.params.id
-//   });
-// }))
+router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+  console.log('Inside post route');
+  const { userId } = req.session.auth;
+  // console.log(req.body);
+  const comment = await db.Comment.create({
+    comment: req.body.comm,
+    user_id: userId,
+    potion_id: req.params.id
+  });
+  res.json({ "comment": comment });
+}))
 
 /* GET new-potions */
 router.get('/new-potion', csrfProtection, (req, res) => {
