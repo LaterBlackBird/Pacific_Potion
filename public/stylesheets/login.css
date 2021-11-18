@@ -7,7 +7,7 @@
   margin-top: 125px;
 }
 
-form {
+#login-form {
   position: relative;
   width: 600px;
   left: 30px;
@@ -38,4 +38,8 @@ form div input {
   position: relative;
   margin-bottom: 25px;
   margin-left: 5px;
+}
+
+#sign-in{
+  width: auto;
 }

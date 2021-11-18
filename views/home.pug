@@ -10,13 +10,19 @@ html
         div(id='user-status')
             if locals.authenticated
                 span Welcome, #{user.username} !
+                br
                 form(action="/logout" method="post")
                     button(type="submit") Logout
+                br
                 a(href="/inventory") Go to Inventory
             else
                 a(href='/signup') Create an account
-                p or
+                br
                 a(href='/login') Log in
+                br
+                form#demo-button(action="/demo" method="post")
+                    button(type="submit") Demo
+
         div(id='searchbar')
             input(type="text" autocomplete="off" placeholder="Search for a potion...")
             button(type="submit")
