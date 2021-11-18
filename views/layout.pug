@@ -8,8 +8,9 @@ html
     div(class="nav")
       a(href='/') Pacific Potion
       div(id="search")
-        input(type="text" name="searchbar" placeholder="Search for a potion..." id="searchbar")
-        button Search
+        form(action="/search", method="post")
+          input(id="searchbar" type="text" name='search' autocomplete="off" placeholder="Search for a potion...")
+          button(type="submit") Search
       div(id="user-nav")
         if locals.authenticated
           span Welcome, #{user.username} !
@@ -29,3 +30,5 @@ html
         h2 You've reached a 404. Please try again.
     else
       block content
+
+        div(id='searchbar')

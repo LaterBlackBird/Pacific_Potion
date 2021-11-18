@@ -13,6 +13,9 @@ body {
     width: 100%;
     top: 0px;
     border-bottom: 1px solid #102863;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -22,7 +25,7 @@ body {
     font-weight: bold;
     font-size: x-large;
     position: relative;
-    top: 11px;
+    /* top: 11px; */
     left: 10px;
     z-index: 1;
 }
@@ -32,12 +35,17 @@ body {
     display: flex;
     align-content: center;
     justify-content: center;
-    top: -12px;
+    /* top: -12px; */
+    width: 700px;
 }
 
 #search input {
-    width: 50%;
-    margin-right: 25px;
+    box-sizing: border-box;
+    width: 550px;
+    height: 25px;
+    margin: 0 5px;
+    /* margin-right: 25px; */
+    /* z-index: 1; */
 }
 
 #user-nav {
@@ -46,7 +54,7 @@ body {
     align-content: center;
     justify-content: flex-end;
     margin-right: 20px;
-    top: -33px;
+    /* top: -33px; */
 }
 
 button {
