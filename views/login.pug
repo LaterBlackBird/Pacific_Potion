@@ -4,17 +4,15 @@ block content
     link(rel='stylesheet' href='/stylesheets/login.css')
     link(rel='stylesheet' href='/stylesheets/error.css')
     div(id="formDiv")
-        form(action='/login' method='post')
+        form#login-form(action='/login' method='post')
             h1= title
             input(type='hidden' name='_csrf' value=csrfToken)
             div
                 label(for='username') Username
-                input(name='username' type='text' placeholder="Name..." id='username')
+                input(name='username' type='text' placeholder="Name..." id='username' required)
             div
                 label(for='password') Password
-                input(name='password' type='password' id='password')
+                input(name='password' type='password' id='password' required)
             div(class="buttons")
                 button(type="submit") Log In
-    form(action="/demo", method="post")
-        button(type="submit") Demo User
     +validationErrorSummary(errors)
