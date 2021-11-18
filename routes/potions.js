@@ -36,4 +36,25 @@ router.post('/add', csrfProtection, asyncHandler(async (req, res) => {
   });
   res.redirect('/');
 }));
+
+/*GET DELETE potion */
+router.get('/delete/:id(\\d+)', csrfProtection,
+  asyncHandler(async (req, res) => {
+    const potionId = parseInt(req.params.id, 10);
+    const potion = await db.Potion.findByPk(potionId);
+    res.render('potion-delete', {
+      potion,
+      csrfToken: req.csrfToken(),
+    });
+  }));
+
+// // /*POST DELETE potion*/
+
+router.post('/delete/:id(\\d+)', csrfProtection,
+  asyncHandler(async (req, res) => {
+    const potionId = parseInt(req.params.id, 10);
+    const potion = await db.Potion.findByPk(potionId);
+    await potion.destroy();
+    res.redirect('/potions');
+  }));
 module.exports = router;
