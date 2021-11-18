@@ -1,0 +1,31 @@
+#commentContainer {
+    margin: auto;
+    position: relative;
+    width: 900px;
+    background-color: #c8d7e4;
+    border-radius: 5px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+#commentContainer h2 {
+    padding-left: 50px;
+}
+
+#commentInput {
+    display: flex;
+    margin: auto;
+    width: 600px;
+    height: 150px;
+    margin-top: 50px;
+    padding: 5px 10px;
+    background-color: #EDEFF5;
+    border-radius: 5px;
+}
+
+#commentSubmit {
+    display: flex;
+    margin: auto;
+    margin-top: 25px;
+}

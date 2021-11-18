@@ -1,0 +1,9 @@
+mixin Comments(comments)
+    link(rel="stylesheet" href="/stylesheets/comments.css")
+    textarea#commentInput(placeholder="Write a comment here...")
+    button#commentSubmit(type="submit") Add Comment
+
+    h2#commentHeader Comments:
+    if comments
+        each comment in comments
+            li.commentItems= comment
