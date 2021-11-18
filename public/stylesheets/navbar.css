@@ -51,6 +51,8 @@ body {
 
 button {
   background-color: #F5C25D;
+  border-radius: 5px;
+  padding: 3px 5px;
 }
 
 #user-nav button {

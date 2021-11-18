@@ -1,4 +1,5 @@
 extends layout.pug
+include comments.pug
 
 mixin loadComment(username, cText)
     li= `${username}: ${cText}`
@@ -29,3 +30,6 @@ block content
         h2 Comments:
             each comment in comments
                 +loadComment(passArr[comment.user_id - 1].username, comment.comment)
+    //- div#commentContainer
+    //-     +Comments
+
