@@ -1,11 +1,10 @@
 mixin Comments
     link(rel="stylesheet" href="/stylesheets/comments.css")
     textarea#commentInput(placeholder="Write a comment here...")
-    button#commentSubmit(type="submit") Add Comment
+    button#commentSubmit Add Comment
 
     h2#commentHeader Comments:
-    if commentsArray
-        each comment in commentsArray
+    if potion.Comments
+        each comment in potion.Comments
             div.commentItems
-                h4 #{comment.User.username} says:
                 p #{comment.comment}
