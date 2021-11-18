@@ -8,29 +8,31 @@ const { userValidators, loginValidators } = require('./authValidations')
 const router = express.Router();
 
 /* VIEW POTION. */
-router.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
+router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   const potion = await db.Potion.findOne({
     where: {
       id: req.params.id
     },
-    include: db.PotionType
+    include: [
+      db.PotionType,
+      db.Comment
+    ]
   });
-  
-  const comments = await db.Comment.findAll({
-    where: { potion_id: req.params.id }
-  })
-  const users = await db.User.findAll();
-  const idOfEveryUser = [];
-  const passArr = [];
-  users.forEach(user => {
-    idOfEveryUser.push(user.id);
-  })
-  comments.forEach(comment => {
-    passArr.push(users[idOfEveryUser[comment.user_id - 1] - 1]);
-  })
 
-  res.render('potion-detail', { potion, passArr, comments });
+  res.render('potion-detail', { potion });
 }));
+
+/* MAKE NEW COMMENT ON POTION PAGE */
+// router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+//   console.log('Inside post route')
+//   const { userId } = req.session.auth;
+//   console.log(userId);
+//   await Comment.create({
+//     comment: req.body,
+//     user_id: userId,
+//     potion_id: req.params.id
+//   });
+// }))
 
 /* GET new-potions */
 router.get('/new-potion', csrfProtection, (req, res) => {

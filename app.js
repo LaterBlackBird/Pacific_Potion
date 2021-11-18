@@ -11,6 +11,7 @@ const indexRouter = require('./routes/index');
 const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');
 const potionsRouter = require('./routes/potions');
+const commentsRouter = require('./routes/comments')
 
 
 const app = express();
@@ -48,6 +49,7 @@ app.use(restoreUser);
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/potions', potionsRouter);
+app.use('/potions', commentsRouter);
 
 
 // catch 404 and forward to error handler
