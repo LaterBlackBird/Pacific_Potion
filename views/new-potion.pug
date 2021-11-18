@@ -3,7 +3,7 @@ extends layout.pug
     block content
         +validationErrorSummary(errors)
             div(id="frmDiv")
-                form(action="/potion/add" method="post")
+                form(action="/potions/add" method="post")
                 h1= title
                 input(type="hidden" value=csrfToken name="_csrf")
             div

@@ -20,14 +20,14 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
 }));
 
 /* GET new-potions */
-router.get('/potion/add', csrfProtection, (req, res) => {
+router.get('/add', csrfProtection, (req, res) => {
   const potionTypes = db.PotionType.findAll()
   return res.render('new-potion', { csrfToken: req.csrfToken(), potionTypes });
 });
 
 /* POST new-potions */
 
-router.post('/potion/add', csrfProtection, asyncHandler(async (req, res) => {
+router.post('/add', csrfProtection, asyncHandler(async (req, res) => {
   const { name, description, type } = req.body
   await Potion.create({
     name,
