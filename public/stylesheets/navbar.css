@@ -35,7 +35,6 @@ body {
     display: flex;
     align-content: center;
     justify-content: center;
-    /* top: -12px; */
     width: 700px;
 }
 
@@ -44,8 +43,7 @@ body {
     width: 550px;
     height: 25px;
     margin: 0 5px;
-    /* margin-right: 25px; */
-    /* z-index: 1; */
+
 }
 
 #user-nav {
@@ -54,7 +52,15 @@ body {
     align-content: center;
     justify-content: flex-end;
     margin-right: 20px;
-    /* top: -33px; */
+}
+
+.nav > div {
+    color: #102863;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {

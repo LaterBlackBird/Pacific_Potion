@@ -13,7 +13,7 @@ html
           button(type="submit") Search
       div(id="user-nav")
         if locals.authenticated
-          span Welcome, #{user.username} !
+          div Welcome, #{user.username} !
           form(action="/logout" method="post")
               button(type="submit") Logout
         else
