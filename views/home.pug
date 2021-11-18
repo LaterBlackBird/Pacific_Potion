@@ -36,3 +36,7 @@ html
             a(href="#") Type
         div(id='recent')
             h2 Recently Created Potions
+            each potion in potions
+                a(id='potion-card' href=`/potions/${potion.id}`)
+                    img(id='potion-image' src=`${potion.PotionType.image}`, alt="an image of a potion")
+                    h5 #{potion.name}
