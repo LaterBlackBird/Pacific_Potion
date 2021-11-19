@@ -104,3 +104,9 @@ button {
   width: 150px;
   height: auto;
 }
+
+a {
+  color: #8C5E1D;
+  text-decoration: none;
+  font-weight: bold;
+}

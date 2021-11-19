@@ -67,6 +67,7 @@ button {
   background-color: #F5C25D;
   border-radius: 5px;
   padding: 3px 5px;
+  color: #102863;
 }
 
 #user-nav button {
@@ -80,4 +81,10 @@ button {
     margin: auto;
     margin-top: 100px;
     width: 40%;
+}
+
+a {
+    color: #8C5E1D;
+    text-decoration: none;
+    font-weight: bold;
 }
