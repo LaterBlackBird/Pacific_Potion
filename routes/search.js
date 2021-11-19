@@ -14,20 +14,33 @@ router.post('/', asyncHandler(async (req, res) => {
     let { search } = req.body
     if (!search) {
         const results = await db.Potion.findAll({
-            include: db.PotionType
+            order: [['name']],
+            include: db.PotionType,
         });
         res.render('search', { results });
 
     } else {
-        search = search.charAt(0).toUpperCase() + search.slice(1);
         const results = await db.Potion.findAll({
             where: {
                 name: { [Op.iLike]: `%${search}%` }
             },
+            order: [['name']],
             include: db.PotionType
         });
         res.render('search', { results });
     }
+}));
+
+router.post('/type', asyncHandler(async (req, res) => {
+    let { type } = req.body
+    const results = await db.Potion.findAll({
+        include: [{
+            model: db.PotionType,
+            where: { name: type }
+        }]
+    });
+    console.log(results);
+    res.render('search', { results });
 }));
 
 
