@@ -29,13 +29,12 @@ html
             form(action="/search", method="post")
                 input(type="text" name='search' autocomplete="off" placeholder="Search for a potion...")
                 button(type="submit")
+
         div(id="potion-types")
-            a(href="#") Type
-            a(href="#") Type
-            a(href="#") Type
-            a(href="#") Type
-            a(href="#") Type
-            a(href="#") Type
+            form(action="/search/type", method="post")
+                each potionType in potionTypes
+                    button(id=`${potionType.name}` type="submit" name='type' value=`${potionType.name}`) #{potionType.name}
+
         div(id='recent')
             h2 Recently Created Potions
             each potion in potions

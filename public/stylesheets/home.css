@@ -5,6 +5,11 @@ body {
   background-color: #edeff5;
 }
 
+button {
+  background-color: #f5c25d;
+  border-radius: 5px;
+}
+
 #header {
   background-image: url('../images/new-homebanner.png');
   height: 300px;
@@ -50,11 +55,14 @@ body {
 #potion-types {
   position: relative;
   width: 200px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   left: 75%;
   top: -35px;
   text-align: center;
+}
+
+#potion-types button{
+  margin: 5px;
 }
 
 #recent {
@@ -87,9 +95,7 @@ body {
   margin: auto;
 }
 
-button {
-  background-color: #f5c25d;
-}
+
 
 #potion-card {
   display: flex;
