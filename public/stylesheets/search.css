@@ -6,10 +6,10 @@
   width: 900px;
   margin: auto;
   border-radius: 5px;
-  margin-top: 125px;
+  margin-top: 80px;
 }
 
-#result-card {
+.result-card {
   text-decoration: none;
   color: inherit;
   display: grid;
@@ -51,4 +51,34 @@
   white-space: nowrap;
   overflow: hidden;
   max-height: 30px;
+}
+
+#sidebar {
+  position: fixed;
+  border-radius: 5px;
+  margin: 100px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+#sidebar p {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+}
+
+#sidebar ul {
+  margin: 5px;
+}
+
+#sidebar li {
+  display: flex;
+  align-items: center;
+}
+
+#sidebar img {
+  width: 30px;
 }
