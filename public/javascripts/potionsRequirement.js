@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', event => {
         const potionId = e.target.id;
         const newComment = document.getElementById('commentInput');
         const response = await postNewComment(`/potions/${potionId}`, newComment.value); // is a promise. must make it not a promise
+        console.log(response);
         const commentContainer = document.getElementById("commentContainer");
         const newCommentDiv = document.createElement("div");
 
