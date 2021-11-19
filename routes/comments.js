@@ -1,12 +1,7 @@
 const express = require('express');
 const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
-const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const { loginUser, logoutUser } = require('../auth')
-const { userValidators, loginValidators } = require('./authValidations')
-const Sequelize = require('sequelize')
-const Op = Sequelize.Op;
+const { check } = require('express-validator');
 
 const router = express.Router();
 
@@ -20,7 +15,7 @@ const commentNotFound = (commentId) => {
     return err;
 }
 
-//use this to make sure that an edited comment is not empty
+// //use this to make sure that an edited comment is not empty
 const validateComment = [
     check("comment")
         .exists({ checkFalsy: true })
@@ -28,18 +23,38 @@ const validateComment = [
 ];
 
 
+
+/***************** GET A COMMENT **********************/
+router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+    const commentId = req.params.id;
+
+    //find the comment being deleted
+    const commentRecord = await db.Comment.findByPk(commentId);
+
+    //make sure the comment was found in the database
+    if (commentRecord) {
+        const comment = commentRecord.comment;
+        res.json({ comment });
+    //handle error if comment is not found in database
+    } else next(commentNotFound(commentId));
+}));
+
+
+
+
+
 /***************** DELETE A COMMENT **********************/
 router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const commentId = req.params.id;
 
     //find the comment being deleted
-    const commentRecord = await Comment.findByPk(commentId);
+    const commentRecord = await db.Comment.findByPk(commentId);
 
     //make sure the comment was found in the database
     if (commentRecord) {
         //destroy record
         await commentRecord.destroy()
-        res.status(204).end();
+        res.json({message: "Successful"});
     //handle error if comment is not found in database
     } else next(commentNotFound(commentId));
 }));
@@ -47,20 +62,21 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 
 
 /***************** EDIT A COMMENT **********************/
-router.put("/:id(\\d+)", validateComment, asyncHandler(async (req, res) => {
+router.put("/:id(\\d+)", asyncHandler(async (req, res) => {
     const commentId = req.params.id
 
     //find the comment being edited
-    const comment = await Comment.findByPk(commentId)
+    const comment = await db.Comment.findByPk(commentId)
+    console.log(req);
 
     //update the comment in the database
-    if (comment) {
-        await comment.update({ comment: req.body.comment });
-        res.status(202).json({ comment });
-    //handle error if comment is not found in database
-    } else {
-        next(commentNotFound(commentId));
-    }
+    // if (comment) {
+    //     await comment.update({ comment: req.body.updateText });
+    //     // res.status(202).json({ comment });
+    // //handle error if comment is not found in database
+    // } else {
+    //     next(commentNotFound(commentId));
+    // }
 }));
 
 module.exports = router
