@@ -1,11 +1,12 @@
 #footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+  position: relative;
+  left:0;
+  bottom: 0;
+  width: 100%;
     background-color: #C8D7E4;
     display: flex;
     flex-direction: row;
+    margin-top: 21%;
     padding-right: 25px;
     border-top: 1px solid #102863;
     font-weight: bold;
@@ -27,5 +28,6 @@
 }
 
 #footer h4 {
-    margin-right: -15px;
+ margin-left: 50px;
+    margin-right: 50px;
 }
