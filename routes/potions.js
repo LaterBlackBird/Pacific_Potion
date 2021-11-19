@@ -57,4 +57,74 @@ router.post('/delete/:id(\\d+)', csrfProtection,
     await potion.destroy();
     res.redirect('/potions');
   }));
+
+  /******GET EDIT Potion*/
+  router.get('/potions/edit/:id(\\d+)', csrfProtection,
+  asyncHandler(async (req, res) => {
+    const potionId = parseInt(req.params.id, 10);
+    const potion = await db.Potion.findByPk(potionId);
+    res.render('potion-edit', {
+      potion,
+      csrfToken: req.csrfToken(),
+    });
+  }));
+
+    /******POST EDIT Potion*/
+
+router.post('/potions/edit/:id(\\d+)', csrfProtection,
+  asyncHandler(async (req, res) => {
+    const potionId = parseInt(req.params.id, 10);
+    const potionToUpdate = await db.Potion.findByPk(potionId);
+
+    const {
+      name,
+      description,
+      type
+    } = req.body;
+
+    const potion = {
+      name,
+      description,
+      type
+    };
+
+    const validatorErrors = validationResult(req);
+
+    if (validatorErrors.isEmpty()) {
+      await potionToUpdate.update(potion);
+      res.redirect(`/potions/${potionId}`);
+    } else {
+      const errors = validatorErrors.array().map((error) => error.msg);
+      res.render('potion-edit', {
+        potion: { ...potion, id: potionId },
+        errors,
+        csrfToken: req.csrfToken(),
+      });
+    }
+  }));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;
