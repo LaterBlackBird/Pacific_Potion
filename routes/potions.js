@@ -26,14 +26,13 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   console.log('Inside post route');
   const { userId } = req.session.auth;
-  // console.log(req.body);
   const comment = await db.Comment.create({
     comment: req.body.comm,
     user_id: userId,
     potion_id: req.params.id
   });
-  res.json({ "comment": comment });
-}))
+  res.json({ "comm": comment });
+}));
 
 /* GET new-potions */
 router.get('/add', csrfProtection, (req, res) => {

@@ -24,7 +24,7 @@
     border-radius: 5px;
 }
 
-#commentSubmit {
+.commentSubmit {
     display: flex;
     margin: auto;
     margin-top: 25px;
