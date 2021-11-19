@@ -7,25 +7,25 @@ const loginUser = async (req, res, user) => {
 };
 
 const restoreUser = async (req, res, next) => {
-        if (req.session.auth) {
-            const { userId } = req.session.auth;
+    if (req.session.auth) {
+        const { userId } = req.session.auth;
 
-            try {
-                const user = await db.User.findByPk(userId);
+        try {
+            const user = await db.User.findByPk(userId);
 
-                if (user) {
-                    res.locals.authenticated = true;
-                    res.locals.user = user;
-                    next();
-                }
-            } catch (error) {
-                res.locals.authenticated = false;
-                next(error);
+            if (user) {
+                res.locals.authenticated = true;
+                res.locals.user = user;
+                next();
             }
-        } else {
+        } catch (error) {
             res.locals.authenticated = false;
-            next();
-        };
+            next(error);
+        }
+    } else {
+        res.locals.authenticated = false;
+        next();
+    };
 };
 
 const logoutUser = (req, res) => {
@@ -35,6 +35,11 @@ const logoutUser = (req, res) => {
 const requireAuth = (req, res, next) => {
     if (!res.locals.authenticated) return res.redirect('/user/login');
     else return next();
+}
+
+const checkPerms = (comment, currUser) => {
+    if (comment.user_id === currUser.id) return true;
+    else return false;
 }
 
 // const checkPermissions = (book, currentUser) => {
@@ -50,5 +55,5 @@ module.exports = {
     restoreUser,
     logoutUser,
     requireAuth,
-    // checkPermissions
+    checkPerms
 };
