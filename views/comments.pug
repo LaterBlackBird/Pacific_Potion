@@ -13,7 +13,7 @@ mixin Comments
             div.commentItems
                 p(class='user') #{comment.User.username} says:
                 p #{comment.comment}
-                p #{locals.authenticated}
+                if locals.user && locals.user.id == comment.user_id
                     div.commentOpts
                         button(class='edit') Edit
                         button(class='del') Delete
