@@ -22,11 +22,15 @@ window.addEventListener('DOMContentLoaded', event => {
         const commentContainer = document.getElementById("commentContainer");
         const newCommentDiv = document.createElement("div");
 
-        const newPTag = document.createElement("p");
-        newPTag.innerText = `${response.users.username}: ${response.comm.comment}`;
+        const usernameP = document.createElement("p");
+        usernameP.setAttribute('class', 'user');
+        usernameP.innerText = `${response.users.username} says:`
+        const commentP = document.createElement("p");
+        commentP.innerText = `${response.comm.comment}`;
 
         newCommentDiv.setAttribute("class", "commentItems")
-        newCommentDiv.appendChild(newPTag);
+        newCommentDiv.appendChild(usernameP);
+        newCommentDiv.appendChild(commentP);
         commentContainer.appendChild(newCommentDiv);
 
 

@@ -15,7 +15,10 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     },
     include: [
       db.PotionType,
-      db.Comment
+      {
+        model: db.Comment,
+        include: db.User
+      }
     ]
   });
 
@@ -74,8 +77,8 @@ router.post('/delete/:id(\\d+)', csrfProtection,
     res.redirect('/potions');
   }));
 
-  /******GET EDIT Potion*/
-  router.get('/potions/edit/:id(\\d+)', csrfProtection,
+/******GET EDIT Potion*/
+router.get('/potions/edit/:id(\\d+)', csrfProtection,
   asyncHandler(async (req, res) => {
     const potionId = parseInt(req.params.id, 10);
     const potion = await db.Potion.findByPk(potionId);
@@ -85,7 +88,7 @@ router.post('/delete/:id(\\d+)', csrfProtection,
     });
   }));
 
-    /******POST EDIT Potion*/
+/******POST EDIT Potion*/
 
 router.post('/potions/edit/:id(\\d+)', csrfProtection,
   asyncHandler(async (req, res) => {
