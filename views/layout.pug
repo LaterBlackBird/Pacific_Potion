@@ -1,3 +1,5 @@
+include footer.pug
+
 doctype html
 html
   head
@@ -28,6 +30,8 @@ html
         h1 Oops. Acid spilled.
         img(src='https://i.imgur.com/O5JXmQS.png')
         h2 You've reached a 404. Please try again.
+      +Footer
     else
       block content
           div(id='searchbar')
+      +Footer
