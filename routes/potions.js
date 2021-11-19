@@ -26,12 +26,13 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   console.log('Inside post route');
   const { userId } = req.session.auth;
+  const users = await db.User.findByPk(userId);
   const comment = await db.Comment.create({
     comment: req.body.comm,
     user_id: userId,
     potion_id: req.params.id
   });
-  res.json({ "comm": comment });
+  res.json({ "comm": comment, "users": users });
 }));
 
 /* GET new-potions */
