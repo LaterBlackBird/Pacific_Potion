@@ -38,3 +38,20 @@
     color: #F5C25D;
     border: 1px solid #EDEFF5;
 }
+
+.commentItems p {
+    text-align: justify;
+}
+
+.user {
+    font-weight: bold;
+    margin-left: -25px;
+}
+
+.commentOpts {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-right: -25px;
+}
