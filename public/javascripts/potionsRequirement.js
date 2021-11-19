@@ -26,5 +26,6 @@ window.addEventListener('DOMContentLoaded', event => {
         newCommentDiv.appendChild(newPTag);
         commentContainer.appendChild(newCommentDiv);
         newComment.value = "";
+        window.scrollTo(0, 100000);
     });
 });
