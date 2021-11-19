@@ -40,7 +40,7 @@ const userValidators = [
 const loginValidators = [
     check('username')
         .exists({ checkFalsy: true })
-        .withMessage('Please provide a value for Email Address'),
+        .withMessage('Please provide a value for Username'),
     check('password')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Password'),
