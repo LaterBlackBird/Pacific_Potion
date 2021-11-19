@@ -68,7 +68,8 @@ button {
 #recent {
   position: relative;
   top: -150px;
-  left: 5%;
+  right: 15%;
+  margin:auto;
   border: 1px solid rgba(255, 255, 255, 0.7);
   height: auto;
   width: 60%;
@@ -76,8 +77,8 @@ button {
   background-color: #c8d7e4;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(5, 200px);
-  grid-template-rows: 1fr 4fr 4fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 56px 1fr 1fr;
   justify-content: center;
 }
 
@@ -107,7 +108,7 @@ button {
 }
 
 #potion-image {
-  width: 150px;
+  width: 75%;
   height: auto;
 }
 
@@ -115,4 +116,8 @@ a {
   color: #8C5E1D;
   text-decoration: none;
   font-weight: bold;
+}
+
+h5 {
+  zoom:200%;
 }
