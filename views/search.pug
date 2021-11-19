@@ -2,10 +2,43 @@ extends layout.pug
 
 block content
     link(rel='stylesheet' href='/stylesheets/search.css')
+    script(src="/javascripts/potionsTypeFilter.js" type = "module")
+    div(id='sidebar')
+        p Filter By Type:
+        ul
+            li(id='Healing')
+                img(src="https://i.imgur.com/RYKtJ0Q.png", alt="Healing")
+                h3 Healing
+            li(id='Buff')
+                img(src="https://i.imgur.com/TS6Bcbr.png", alt="Buff")
+                h3 Buff
+            li(id='Utility')
+                img(src="https://i.imgur.com/UkUlczj.png", alt="Utility")
+                h3 Utility
+            li(id='Combat')
+                img(src="https://i.imgur.com/Eb5yNxw.png", alt="Combat")
+                h3 Combat
+            li(id='Poison')
+                img(src="https://i.imgur.com/CAawjOY.png", alt="Poison")
+                h3 Poison
+            li(id='Enchantment')
+                img(src="https://i.imgur.com/UVodTbe.png", alt="Enchantment")
+                h3 Enchantment
+            li(id='Illusion')
+                img(src="https://i.imgur.com/zVwEYOh.png", alt="Illusion")
+                h3 Illusion
+
     div(id='results-container')
+        if results.length == 0
+            h2 You found an empty potion shelf.
+        else if search
+            h2 Search Results for #{search}
+        else
+            h2 Search Results:
+
         if results
             each result in results
-                a(id='result-card' href=`/potions/${result.id}`)
+                a(class='result-card' id=`${result.PotionType.name}` href=`/potions/${result.id}`)
                     img(id='potion-image' src=`${result.PotionType.image}`, alt="an image of a potion")
                     h2#potion-name #{result.name}
                     span#potion-type Type: #{result.PotionType.name}
