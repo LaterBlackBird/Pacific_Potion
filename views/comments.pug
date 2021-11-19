@@ -2,6 +2,7 @@
 mixin Comments
     link(rel="stylesheet" href="/stylesheets/comments.css")
     script(src="/javascripts/potionsRequirement.js" type = "module")
+    script(src="../auth.js" type="module")
     if locals.authenticated
         textarea#commentInput(placeholder="Write a comment here...")
         button(class="commentSubmit" id=potion.id) Add Comment
@@ -12,6 +13,7 @@ mixin Comments
             div.commentItems
                 p(class='user') #{comment.User.username} says:
                 p #{comment.comment}
-                div.commentOpts
-                    button(class='edit') Edit
-                    button(class='del') Delete
+                p #{locals.authenticated}
+                    div.commentOpts
+                        button(class='edit') Edit
+                        button(class='del') Delete
