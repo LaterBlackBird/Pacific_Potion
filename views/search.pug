@@ -29,7 +29,13 @@ block content
                 h3 Illusion
 
     div(id='results-container')
-        h2 Search Results:
+        if results.length == 0
+            h2 You found an empty potion shelf.
+        else if search
+            h2 Search Results for #{search}
+        else
+            h2 Search Results:
+
         if results
             each result in results
                 a(class='result-card' id=`${result.PotionType.name}` href=`/potions/${result.id}`)
