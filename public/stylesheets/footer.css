@@ -1,0 +1,33 @@
+#footer {
+  position: relative;
+  left:0;
+  bottom: 0;
+  width: 100%;
+    background-color: #C8D7E4;
+    display: flex;
+    flex-direction: row;
+    margin-top: 21%;
+    padding-right: 25px;
+    border-top: 1px solid #102863;
+    font-weight: bold;
+    justify-content: flex-end;
+    height: 50px;
+}
+
+#footer img {
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    position: relative;
+    bottom: -4px;
+}
+
+#footer p {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#footer h4 {
+ margin-left: 50px;
+    margin-right: 50px;
+}
