@@ -31,7 +31,7 @@ html
         div(id="potion-types")
             form(action="/search/type", method="post")
                 each potionType in potionTypes
-                    button(type="submit" name='type' value=`${potionType.name}`) #{potionType.name}
+                    button(id=`${potionType.name}` type="submit" name='type' value=`${potionType.name}`) #{potionType.name}
 
         div(id='recent')
             h2 Recently Created Potions
