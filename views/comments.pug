@@ -1,9 +1,12 @@
-mixin Comments(comments)
+
+mixin Comments
     link(rel="stylesheet" href="/stylesheets/comments.css")
+    script(src="/javascripts/potionsRequirement.js" type = "module")
     textarea#commentInput(placeholder="Write a comment here...")
-    button#commentSubmit(type="submit") Add Comment
+    button(class="commentSubmit" id=potion.id) Add Comment
 
     h2#commentHeader Comments:
-    if comments
-        each comment in comments
-            li.commentItems= comment
+    if potion.Comments
+        each comment in potion.Comments
+            div.commentItems
+                p #{comment.comment}

@@ -7,16 +7,31 @@ const { loginUser, logoutUser } = require('../auth')
 const { userValidators, loginValidators } = require('./authValidations')
 const router = express.Router();
 
-
-/* GET users listing. */
-router.get('/:id(\\d+)', csrfProtection, asyncHandler(async (req, res) => {
+/* VIEW POTION. */
+router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   const potion = await db.Potion.findOne({
     where: {
       id: req.params.id
     },
-    include: db.PotionType
+    include: [
+      db.PotionType,
+      db.Comment
+    ]
   });
+
   res.render('potion-detail', { potion });
+}));
+
+/* MAKE NEW COMMENT ON POTION PAGE */
+router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+  console.log('Inside post route');
+  const { userId } = req.session.auth;
+  const comment = await db.Comment.create({
+    comment: req.body.comm,
+    user_id: userId,
+    potion_id: req.params.id
+  });
+  res.json({ "comm": comment });
 }));
 
 /* GET new-potions */
