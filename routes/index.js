@@ -14,7 +14,10 @@ router.get('/', asyncHandler(async (req, res, next) => {
     include: db.PotionType,
     limit: 10
   })
-  res.render('home', { potions });
+
+  const potionTypes = await db.PotionType.findAll();
+
+  res.render('home', { potions, potionTypes });
 }));
 
 // GET inventory page
