@@ -13,6 +13,7 @@ html
         form(action="/search", method="post")
           input(id="searchbar" type="text" name='search' autocomplete="off" placeholder="Search for a potion...")
           button(type="submit") Search
+          button(type="submit") Show All
       div(id="user-nav")
         if locals.authenticated
           div Welcome, #{user.username} !

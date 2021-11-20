@@ -28,7 +28,8 @@ html
         div(id='searchbar')
             form(action="/search", method="post")
                 input(type="text" name='search' autocomplete="off" placeholder="Search for a potion...")
-                button(type="submit")
+                button(type="submit" id="search-button")
+                button(type="submit" id="show-all-button") Show All
 
         div(id="potion-types")
             form(action="/search/type", method="post")
