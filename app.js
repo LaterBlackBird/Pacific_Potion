@@ -12,6 +12,7 @@ const { sessionSecret } = require('./config');
 const { restoreUser } = require('./auth');
 const potionsRouter = require('./routes/potions');
 const searchRouter = require('./routes/search');
+const commentRouter = require('./routes/comments');
 
 
 
@@ -51,6 +52,7 @@ app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/potions', potionsRouter);
 app.use('/search', searchRouter);
+app.use('/comments', commentRouter);
 
 
 // catch 404 and forward to error handler

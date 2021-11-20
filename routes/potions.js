@@ -123,17 +123,72 @@ router.post('/potions/edit/:id(\\d+)', csrfProtection,
   }));
 
 
+// /*DELETE COMMENTS */
+//   router.get('/delete/:id(\\d+)', csrfProtection,
+//   asyncHandler(async (req, res) => {
+//     const commentId = parseInt(req.params.id, 10);
+//     const comment = await db.Comment.findByPk(commentId);
+//     res.render('comment-delete', {
+//       comment,
+//       csrfToken: req.csrfToken(),
+//     });
+//   }));
 
 
+//   router.post('/delete/:id(\\d+)', csrfProtection,
+//   asyncHandler(async (req, res) => {
+//     const commentId = parseInt(req.params.id, 10);
+//     const comment = await db.Comment.findByPk(commentId);
+//     await comment.destroy();
+//     res.redirect('/potions');
+//   }));
 
 
+  // /*EDIT COMMENTS*/
+
+// router.get('/potions/edit/:id(\\d+)', csrfProtection,
+//   asyncHandler(async (req, res) => {
+//     const commentId = parseInt(req.params.id, 10);
+//     const comment = await db.Comment.findByPk(commentId);
+//     res.render('comment-edit', {
+//       comment,
+//       csrfToken: req.csrfToken(),
+//     });
+//   }));
 
 
+//   router.post('/potions/edit/:id(\\d+)', csrfProtection,
+//   asyncHandler(async (req, res) => {
+//     const commentId = parseInt(req.params.id, 10);
+//     const commentToUpdate = await db.Comment.findByPk(commentId);
 
+//     const {
+//       comment,
+//       potion_id
+//     } = req.body;
 
+//     const comment = {
+//       comment
+//     };
 
+//     const potionId = {
+//       potion_id
+//     }
 
+//     const validatorErrors = validationResult(req);
 
+//     if (validatorErrors.isEmpty()) {
+//       await commentToUpdate.update(comment);
+//       res.redirect(`/potions/${potionId}`);
+//     } else {
+//       const errors = validatorErrors.array().map((error) => error.msg);
+//       res.render('comment-edit', {
+//         comment: { ...comment, id: commentId },
+//         errors,
+//         csrfToken: req.csrfToken(),
+//       });
+//     }
+//   }));
 
 
 

@@ -2,6 +2,8 @@
 mixin Comments
     link(rel="stylesheet" href="/stylesheets/comments.css")
     script(src="/javascripts/potionsRequirement.js" type = "module")
+    script(src="/javascripts/commentEditDelete.js" type = "module")
+
     script(src="../auth.js" type="module")
     if locals.authenticated
         textarea#commentInput(placeholder="Write a comment here...")
@@ -10,10 +12,10 @@ mixin Comments
     h2#commentHeader Comments:
     if potion.Comments
         each comment in potion.Comments
-            div.commentItems
+            div(class='commentItems' id=`commentContainer-${comment.id}`)
                 p(class='user') #{comment.User.username} says:
                 p #{comment.comment}
                 if locals.user && locals.user.id == comment.user_id
                     div.commentOpts
-                        button(class='edit') Edit
-                        button(class='del') Delete
+                        button(class='edit' id=`edit-${comment.id}`) Edit
+                        button(class='del' id=`del-${comment.id}`) Delete
