@@ -4,29 +4,23 @@ block content
     link(rel='stylesheet' href='/stylesheets/search.css')
     script(src="/javascripts/potionsTypeFilter.js" type = "module")
     div(id='sidebar')
-        p Filter By Type:
-        ul
-            li(id='Healing')
-                img(src="https://i.imgur.com/RYKtJ0Q.png", alt="Healing")
-                h3 Healing
-            li(id='Buff')
-                img(src="https://i.imgur.com/TS6Bcbr.png", alt="Buff")
-                h3 Buff
-            li(id='Utility')
-                img(src="https://i.imgur.com/UkUlczj.png", alt="Utility")
-                h3 Utility
-            li(id='Combat')
-                img(src="https://i.imgur.com/Eb5yNxw.png", alt="Combat")
-                h3 Combat
-            li(id='Poison')
-                img(src="https://i.imgur.com/CAawjOY.png", alt="Poison")
-                h3 Poison
-            li(id='Enchantment')
-                img(src="https://i.imgur.com/UVodTbe.png", alt="Enchantment")
-                h3 Enchantment
-            li(id='Illusion')
-                img(src="https://i.imgur.com/zVwEYOh.png", alt="Illusion")
-                h3 Illusion
+        p Search By Type:
+        div(id="potion-types")
+            form(action="/search/type", method="post")
+                button(id=`Healing` type="submit" name='type' value=`Healing`) Healing
+                    img(src="https://i.imgur.com/RYKtJ0Q.png", alt="Healing")
+                button(id=`Buff` type="submit" name='type' value=`Buff`) Buff
+                    img(src="https://i.imgur.com/TS6Bcbr.png", alt="Buff")
+                button(id=`Utility` type="submit" name='type' value=`Utility`) Utility
+                    img(src="https://i.imgur.com/UkUlczj.png", alt="Utility")
+                button(id=`Combat` type="submit" name='type' value=`Combat`) Combat
+                    img(src="https://i.imgur.com/Eb5yNxw.png", alt="Combat")
+                button(id=`Poison` type="submit" name='type' value=`Poison`) Poison
+                    img(src="https://i.imgur.com/CAawjOY.png", alt="Poison")
+                button(id=`Enchantment` type="submit" name='type' value=`Enchantment`) Enchantment
+                    img(src="https://i.imgur.com/UVodTbe.png", alt="Enchantment")
+                button(id=`Illusion` type="submit" name='type' value=`Illusion`) Illusion
+                    img(src="https://i.imgur.com/zVwEYOh.png", alt="Illusion")
 
     div(id='results-container')
         if results.length == 0

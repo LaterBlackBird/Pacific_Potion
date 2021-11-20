@@ -1,7 +1,7 @@
 const express = require('express');
 const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
-const { check, validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const { loginUser, logoutUser } = require('../auth')
 const { userValidators, loginValidators } = require('./authValidations')

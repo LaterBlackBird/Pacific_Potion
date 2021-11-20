@@ -69,6 +69,7 @@ button {
   border-radius: 5px;
   padding: 3px 5px;
   color: #102863;
+  margin: 0 2px;
 }
 
 #user-nav button {

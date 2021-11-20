@@ -37,19 +37,31 @@ button {
   left: 75%;
   width: 15%;
   top: -50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #searchbar input {
   padding: 3px;
 }
 
-#searchbar button {
+#searchbar #search-button {
   background: url(icn_nav_search.svg) no-repeat center;
   background-color: #f5c25d;
   height: 25px;
   width: 25px;
   position: relative;
   top: 5px;
+}
+
+#searchbar #show-all-button{
+  background: inherit;
+  border: none;
+  width: fit-content;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
 }
 
 #potion-types {

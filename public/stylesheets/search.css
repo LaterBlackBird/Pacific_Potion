@@ -1,3 +1,7 @@
+html{
+  height: 100%;
+}
+
 #results-container {
   display: flex;
   flex-direction: column;
@@ -54,12 +58,14 @@
 }
 
 #sidebar {
-  position: fixed;
+  position: absolute;
   border-radius: 5px;
-  margin: 100px 0 0 10px;
+  margin: 100px 0 0 50px;
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
 }
 
 #sidebar p {
@@ -68,6 +74,31 @@
   padding: 5px;
   margin: 0;
   text-align: center;
+  width: fit-content;
+
+}
+
+#sidebar form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  margin: 0 25px;
+}
+
+#sidebar button {
+  background: none;
+  width: 70px;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  color: inherit;
+  font-weight: bold;
 }
 
 #sidebar ul {
@@ -81,7 +112,7 @@
 }
 
 #sidebar img {
-  width: 30px;
+  width: 60px;
 }
 
 [hidden] {
