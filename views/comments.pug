@@ -4,7 +4,6 @@ mixin Comments
     script(src="/javascripts/potionsRequirement.js" type = "module")
     script(src="/javascripts/commentEditDelete.js" type = "module")
 
-    script(src="../auth.js" type="module")
     if locals.authenticated
         textarea#commentInput(placeholder="Write a comment here...")
         button(class="commentSubmit" id=potion.id) Add Comment

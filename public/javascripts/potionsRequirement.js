@@ -1,5 +1,4 @@
 async function postNewComment(url = '', data) {
-    console.log('Post fetch request reached!');
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -13,13 +12,12 @@ async function postNewComment(url = '', data) {
 window.addEventListener('DOMContentLoaded', event => {
     const addCom = document.querySelector('.commentSubmit');
 
-    addCom.addEventListener('click', postComment);
+    if (addCom) addCom.addEventListener('click', postComment);
 
     async function postComment(e) {
         const potionId = e.target.id;
         const newComment = document.getElementById('commentInput');
         const response = await postNewComment(`/potions/${potionId}`, newComment.value); // is a promise. must make it not a promise
-        console.log(response.comm.id);
         const commentContainer = document.getElementById("commentContainer");
 
         const usernameP = document.createElement("p");
