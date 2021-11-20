@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 21%;
-    padding-right: 25px;
+    /* padding-right: 25px; */
     border-top: 1px solid #102863;
     font-weight: bold;
     justify-content: flex-end;
