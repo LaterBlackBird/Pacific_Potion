@@ -14,9 +14,9 @@ html
                 span Welcome, #{user.username} !
                 br
                 form(action="/logout" method="post")
-                    button(type="submit") Logout
+                    button(type="submit" id='logmeout') Logout
                 br
-                a(href="/inventory") Go to Inventory
+                //- a(href="/inventory") Go to Inventory
             else
                 a(href='/signup') Create an account
                 br
