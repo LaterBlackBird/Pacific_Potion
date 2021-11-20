@@ -12,7 +12,7 @@ async function postNewComment(url = '', data) {
 window.addEventListener('DOMContentLoaded', event => {
     const addCom = document.querySelector('.commentSubmit');
 
-    if (addCom) addCom.addEventListener('click', postComment);
+    addCom.addEventListener('click', postComment);
 
     async function postComment(e) {
         const potionId = e.target.id;
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', event => {
         commentContainer.appendChild(newCommentDiv);
 
 
-        // window.scrollTo(0, 100000);
+        window.scrollTo(0, 100000);
     }
 
 });
