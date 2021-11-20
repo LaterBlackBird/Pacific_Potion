@@ -36,7 +36,6 @@ router.post('/', asyncHandler(async (req, res) => {
 }));
 
 router.post('/type', asyncHandler(async (req, res) => {
-    //search for the specific potion type asked for
     let { type } = req.body
     const results = await db.Potion.findAll({
         include: [{
@@ -45,7 +44,7 @@ router.post('/type', asyncHandler(async (req, res) => {
         }]
     });
     console.log(results);
-    res.render('search', { results, search });
+    res.render('search', { results });
 }));
 
 module.exports = router;
