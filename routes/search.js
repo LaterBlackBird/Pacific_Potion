@@ -43,7 +43,7 @@ router.post('/type', asyncHandler(async (req, res) => {
             where: { name: type }
         }]
     });
-    console.log(results);
+
     res.render('search', { results });
 }));
 
