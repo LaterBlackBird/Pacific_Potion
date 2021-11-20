@@ -7,14 +7,15 @@ block content
         div#potion_detail_grid
             #imgDiv
                 img#potionImage(src=`${potion.PotionType.image}`, alt="a picture of a potion")
-            form#inventoryAddButton(action="/api/user/:id/inventory", method="post")
-                button(type="submit") Add to Inventory
+            //- form#inventoryAddButton(action="/api/user/:id/inventory", method="post")
+            //-     button(type="submit") Add to Inventory
             h2#potionName #{potion.name}
             p#createdBy Potion Type: #{potion.PotionType.name}
             div#potionDescriptionContainer
                 p#descriptionText #{potion.description}
-            div#potionEditButtonsContainer
-                button#potionEditButton(name="potion_edit") Edit Potion
-                button#potionDeleteButton(name="potion_delete") Delete Potion
+            if locals.user && locals.user.id == potion.user_id
+                div#potionEditButtonsContainer
+                    button#potionEditButton(name="potion_edit") Edit Potion
+                    button#potionDeleteButton(name="potion_delete") Delete Potion
     div#commentContainer
         +Comments
