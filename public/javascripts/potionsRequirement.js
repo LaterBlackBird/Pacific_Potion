@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', event => {
         commentContainer.appendChild(newCommentDiv);
 
 
-        window.scrollTo(0, 100000);
+        // window.scrollTo(0, 100000);
     }
 
 });
