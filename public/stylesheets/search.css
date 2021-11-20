@@ -58,12 +58,13 @@ html{
 }
 
 #sidebar {
-  position: fixed;
+  position: absolute;
   border-radius: 5px;
-  margin: 100px 0 0 10px;
+  margin: 100px 0 0 50px;
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
 }
 
@@ -73,6 +74,8 @@ html{
   padding: 5px;
   margin: 0;
   text-align: center;
+  width: fit-content;
+
 }
 
 #sidebar form {
@@ -80,6 +83,8 @@ html{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 150px;
+  margin: 0 25px;
 }
 
 #sidebar button {
@@ -107,7 +112,7 @@ html{
 }
 
 #sidebar img {
-  width: 30px;
+  width: 60px;
 }
 
 [hidden] {
