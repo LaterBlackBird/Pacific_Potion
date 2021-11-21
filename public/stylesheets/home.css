@@ -107,7 +107,10 @@ button {
   margin: auto;
 }
 
-
+#recent h5 {
+  font-size: 22px;
+  text-align: center;
+}
 
 #potion-card {
   display: flex;
