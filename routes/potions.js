@@ -19,7 +19,7 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     ]
   });
 
-  res.render('potion-detail', { potion });
+  res.render('potion-detail', { potion, title: 'Pacific Potion' });
 }));
 
 /* MAKE NEW COMMENT ON POTION PAGE */
@@ -141,7 +141,7 @@ router.post('/potions/edit/:id(\\d+)', csrfProtection,
 //   }));
 
 
-  // /*EDIT COMMENTS*/
+// /*EDIT COMMENTS*/
 
 // router.get('/potions/edit/:id(\\d+)', csrfProtection,
 //   asyncHandler(async (req, res) => {

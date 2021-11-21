@@ -17,7 +17,7 @@ router.post('/', asyncHandler(async (req, res) => {
             include: db.PotionType,
         });
         res.render('search', { results, search });
-    //else return the potion that was asked for
+        //else return the potion that was asked for
     } else {
         const results = await db.Potion.findAll({
             where: {
@@ -27,7 +27,7 @@ router.post('/', asyncHandler(async (req, res) => {
             include: db.PotionType
         });
 
-        res.render('search', { results, search });
+        res.render('search', { results, search, title: 'Pacific Potion' });
     }
 }));
 
@@ -40,7 +40,7 @@ router.post('/type', asyncHandler(async (req, res) => {
         }]
     });
 
-    res.render('search', { results });
+    res.render('search', { results, title: 'Pacific Potion' });
 }));
 
 module.exports = router;
