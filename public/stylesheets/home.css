@@ -34,7 +34,7 @@ button {
 
 #searchbar {
   position: relative;
-  left: 75%;
+  left: 73%;
   width: 15%;
   top: -50px;
   display: flex;
@@ -44,6 +44,7 @@ button {
 
 #searchbar input {
   padding: 3px;
+  margin-right: 5px;
 }
 
 #searchbar #search-button {
@@ -56,12 +57,11 @@ button {
 }
 
 #searchbar #show-all-button{
-  background: inherit;
-  border: none;
   width: fit-content;
   height: 25px;
   position: relative;
   cursor: pointer;
+  margin-left: 3px;
 }
 
 #potion-types {

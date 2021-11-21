@@ -21,9 +21,15 @@ router.get('/', asyncHandler(async (req, res, next) => {
 }));
 
 // GET inventory page
-router.get('/inventory', function (req, res, next) {
-  res.render('inventory', { title: 'inventory' });
+// router.get('/inventory', function (req, res, next) {
+//   res.render('inventory', { title: 'inventory' });
+// })
+
+// GET the developers page
+router.get('/about', function (req, res, next) {
+  res.render('about', { title: 'About the Developers' })
 })
+
 
 /********************** USER REGISTRATION ********************************/
 
