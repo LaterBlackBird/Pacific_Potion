@@ -1,3 +1,4 @@
+![Site Preview](/public/images/site-preview.png)
 # Pacific Potion
 
 ## Explanation
