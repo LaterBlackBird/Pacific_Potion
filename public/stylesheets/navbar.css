@@ -7,6 +7,12 @@ body {
     height: 100%;
 }
 
+#about {
+    font-size: large;
+    position: relative;
+    left: -100px;
+}
+
 .nav {
     height: 50px;
     background-color: #C8D7E4;
@@ -17,7 +23,6 @@ body {
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .nav > a {
@@ -31,12 +36,17 @@ body {
     z-index: 1;
 }
 
+.nav > a:hover {
+    color: #8C5E1D;
+}
+
 #search {
     position: relative;
     display: flex;
     align-content: center;
     justify-content: center;
     width: 700px;
+    left: -5%;
 }
 
 #search input {

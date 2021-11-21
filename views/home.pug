@@ -27,9 +27,9 @@ html
 
         div(id='searchbar')
             form(action="/search", method="post")
-                input(type="text" name='search' autocomplete="off" placeholder="Search for a potion...")
+                input(type="text" name='search' autocomplete="off" placeholder="Search by name...")
                 button(type="submit" id="search-button")
-                button(type="submit" id="show-all-button") Show All
+                button(type="submit" id="show-all-button") All Types
 
         div(id="potion-types")
             form(action="/search/type", method="post")
@@ -42,4 +42,3 @@ html
                 a(id='potion-card' href=`/potions/${potion.id}`)
                     img(id='potion-image' src=`${potion.PotionType.image}`, alt="an image of a potion")
                     h5 #{potion.name}
-        +Footer
