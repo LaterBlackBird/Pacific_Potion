@@ -9,7 +9,8 @@ module.exports = {
       Example:
       */
    return queryInterface.bulkInsert('Comments', [
-    { comment: 'When I found out this potion only works on medium and small creatures I felt quite excluded. In the future I\'d like to see potions designed for larger creatures too.', user_id: '1', potion_id: '1', createdAt: new Date(), updatedAt: new Date()}
+    { comment: 'When I found out this potion only works on medium and small creatures I felt quite excluded. In the future I\'d like to see potions designed for larger creatures too.', user_id: '1', potion_id: '1', createdAt: new Date(), updatedAt: new Date()},
+    { comment: '^', user_id: '2', potion_id: '1', createdAt: new Date(), updatedAt: new Date()}
    ], {});
   },
 
